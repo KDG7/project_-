@@ -1,0 +1,54 @@
+/* styles.css */
+.crops_list_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 79vh;
+    margin-left: 77px;
+    overflow: hidden;
+    background-color: #f0f0f0;
+}
+
+.crops_list {
+    position: relative;
+    height: 79vh;
+    overflow-y: scroll;
+    width: 300px;
+    background-color: #f2f4f6;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+.crops_info {
+    margin: 10px 0;
+    padding: 20px;
+    background-color: #007BFF;
+    color: white;
+    text-align: center;
+    transition: all 0.3s ease;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.crops_info.shrink {
+    padding: 10px;
+    opacity: 0.5;
+    transform: scale(0.8);
+}
+
+.crops_info.grow {
+    padding: 30px;
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+.scroll_bla{
+    height: 79vh;
+    background-color: #f2f4f6;
+    width: 22px;
+    z-index: 100;
+    position: relative;
+    left: -19px;
+}

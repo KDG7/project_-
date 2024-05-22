@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>오아시스</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='css/main.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='css/scroll.css') }}">
+    <script src="{{ url_for('static', path='js/main.js') }}"></script>
+    <script src="{{ url_for('static', path='js/scroll.js') }}"></script>
 </head>
 <body>
     <header><!--상단-->
         <div class="header_content_box">
             <div class="main_logo">
-                <a href="{{ url_for('static', filename='img/grape.png') }}"></a>
+                <a href="{{ url_for('static', path='img/grape.png') }}"></a>
             </div>
             <ul class="header_content_list">
                 <li class="header_content"><button>소개</button></li>
@@ -72,7 +74,7 @@
                                 <div class="intro_res_ranking_box">
                                     <div class="intro_res_ranking_1_info"><span>서울</span>의 1등은 <span>토마토</span>군요!</div>
                                 
-                                    <img class="intro_res_ranking_1_img"src="{{ url_for('static', filename='img/tomato2.png') }}" alt="tomato">
+                                    <img class="intro_res_ranking_1_img"src="{{ url_for('static', path='img/tomato2.png') }}" alt="tomato">
                                 </div>
                             </div>
                             <div class="intro_res_rank_box">
@@ -223,17 +225,17 @@
                             <div class="intro_res_ranking_con_box">
                                 <div class="intro_res_ranking_1_con_info"><span>전국</span>의 1등은 <span>토마토</span>군요!</div>
                             
-                                <img class="intro_res_ranking_1_con_img"src="{{ url_for('static', filename='img/tomato2.png') }}" alt="tomato">
+                                <img class="intro_res_ranking_1_con_img"src="{{ url_for('static', path='img/tomato2.png') }}" alt="tomato">
                             </div>
                             <div class="intro_res_ranking_con_box2">
                                 <div class="intro_res_ranking_2_con_info"><span>2등 <span>감자</span></div>
                             
-                                <img class="intro_res_ranking_2_con_img"src="{{ url_for('static', filename='img/potato2.png') }}" alt="tomato">
+                                <img class="intro_res_ranking_2_con_img"src="{{ url_for('static', path='img/potato2.png') }}" alt="tomato">
                             </div>
                             <div class="intro_res_ranking_con_box2">
                                 <div class="intro_res_ranking_3_con_info"><span>3등 <span>포도</span></div>
                             
-                                <img class="intro_res_ranking_3_con_img"src="{{ url_for('static', filename='img/grape2.png') }}" alt="tomato">
+                                <img class="intro_res_ranking_3_con_img"src="{{ url_for('static', path='img/grape2.png') }}" alt="tomato">
                             </div>
                         </div>
                         <div class="intro_res_rain_block">
@@ -253,143 +255,7 @@
             <hr class="blank_line2">
             <hr class="blank_line1">
             <div class="detail_block">
-                <ul class="crops_list">
-                    <li class="crops_info">
-                        <div class="crops_info_box">
-                            <span class="crops_name">토마토</span>
-                            <span class="crops_bla1">&nbsp&nbsp평 당 수익&nbsp</span>
-                            <span class="crops_revenue">27,000</span>
-                            <span class="crops_bla2">원</span>
-                            <span class="crops_bla1">(최근 1년)</span>
-                        </div>
-                    </li>
-                    <li class="crops_info">
-                        <div class="crops_info_box">
-                            <span class="crops_name">토마토</span>
-                            <span class="crops_bla1">&nbsp&nbsp평 당 수익&nbsp</span>
-                            <span class="crops_revenue">27,000</span>
-                            <span class="crops_bla2">원</span>
-                            <span class="crops_bla1">(최근 1년)</span>
-                        </div>
-                    </li>
-                    <li class="crops_info">
-                        <div class="crops_info_box">
-                            <span class="crops_name">토마토</span>
-                            <span class="crops_bla1">&nbsp&nbsp평 당 수익&nbsp</span>
-                            <span class="crops_revenue">27,000</span>
-                            <span class="crops_bla2">원</span>
-                            <span class="crops_bla1">(최근 1년)</span>
-                        </div>
-                    </li>
-                    <li class="crops_info">
-                        <div class="crops_info_box">
-                            <span class="crops_name">토마토</span>
-                            <span class="crops_bla1">&nbsp&nbsp평 당 수익&nbsp</span>
-                            <span class="crops_revenue">27,000</span>
-                            <span class="crops_bla2">원</span>
-                            <span class="crops_bla1">(최근 1년)</span>
-                        </div>
-                    </li>
-                    <li class="crops_info">
-                        <div class="crops_info_box">
-                            <span class="crops_name">토마토</span>
-                            <span class="crops_bla1">&nbsp&nbsp평 당 수익&nbsp</span>
-                            <span class="crops_revenue">27,000</span>
-                            <span class="crops_bla2">원</span>
-                            <span class="crops_bla1">(최근 1년)</span>
-                        </div>
-                    </li>
-                    <li class="crops_info">
-                        <div class="crops_info_box">
-                            <span class="crops_name">토마토</span>
-                            <span class="crops_bla1">&nbsp&nbsp평 당 수익&nbsp</span>
-                            <span class="crops_revenue">27,000</span>
-                            <span class="crops_bla2">원</span>
-                            <span class="crops_bla1">(최근 1년)</span>
-                        </div>
-                    </li>
-                    <li class="crops_info">
-                        <div class="crops_info_box">
-                            <span class="crops_name">토마토</span>
-                            <span class="crops_bla1">&nbsp&nbsp평 당 수익&nbsp</span>
-                            <span class="crops_revenue">27,000</span>
-                            <span class="crops_bla2">원</span>
-                            <span class="crops_bla1">(최근 1년)</span>
-                        </div>
-                    </li>
-                    <li class="crops_info">
-                        <div class="crops_info_box">
-                            <span class="crops_name">토마토</span>
-                            <span class="crops_bla1">&nbsp&nbsp평 당 수익&nbsp</span>
-                            <span class="crops_revenue">27,000</span>
-                            <span class="crops_bla2">원</span>
-                            <span class="crops_bla1">(최근 1년)</span>
-                        </div>
-                    </li>
-                    <li class="crops_info">
-                        <div class="crops_info_box">
-                            <span class="crops_name">토마토</span>
-                            <span class="crops_bla1">&nbsp&nbsp평 당 수익&nbsp</span>
-                            <span class="crops_revenue">27,000</span>
-                            <span class="crops_bla2">원</span>
-                            <span class="crops_bla1">(최근 1년)</span>
-                        </div>
-                    </li>
-                    <li class="crops_info">
-                        <div class="crops_info_box">
-                            <span class="crops_name">토마토</span>
-                            <span class="crops_bla1">&nbsp&nbsp평 당 수익&nbsp</span>
-                            <span class="crops_revenue">27,000</span>
-                            <span class="crops_bla2">원</span>
-                            <span class="crops_bla1">(최근 1년)</span>
-                        </div>
-                    </li>
-                    <li class="crops_info">
-                        <div class="crops_info_box">
-                            <span class="crops_name">토마토</span>
-                            <span class="crops_bla1">&nbsp&nbsp평 당 수익&nbsp</span>
-                            <span class="crops_revenue">27,000</span>
-                            <span class="crops_bla2">원</span>
-                            <span class="crops_bla1">(최근 1년)</span>
-                        </div>
-                    </li>
-                    <li class="crops_info">
-                        <div class="crops_info_box">
-                            <span class="crops_name">토마토</span>
-                            <span class="crops_bla1">&nbsp&nbsp평 당 수익&nbsp</span>
-                            <span class="crops_revenue">27,000</span>
-                            <span class="crops_bla2">원</span>
-                            <span class="crops_bla1">(최근 1년)</span>
-                        </div>
-                    </li>
-                    <li class="crops_info">
-                        <div class="crops_info_box">
-                            <span class="crops_name">토마토</span>
-                            <span class="crops_bla1">&nbsp&nbsp평 당 수익&nbsp</span>
-                            <span class="crops_revenue">27,000</span>
-                            <span class="crops_bla2">원</span>
-                            <span class="crops_bla1">(최근 1년)</span>
-                        </div>
-                    </li>
-                    <li class="crops_info">
-                        <div class="crops_info_box">
-                            <span class="crops_name">토마토</span>
-                            <span class="crops_bla1">&nbsp&nbsp평 당 수익&nbsp</span>
-                            <span class="crops_revenue">27,000</span>
-                            <span class="crops_bla2">원</span>
-                            <span class="crops_bla1">(최근 1년)</span>
-                        </div>
-                    </li>
-                    <li class="crops_info">
-                        <div class="crops_info_box">
-                            <span class="crops_name">토마토</span>
-                            <span class="crops_bla1">&nbsp&nbsp평 당 수익&nbsp</span>
-                            <span class="crops_revenue">27,000</span>
-                            <span class="crops_bla2">원</span>
-                            <span class="crops_bla1">(최근 1년)</span>
-                        </div>
-                    </li>
-                </ul>
+                {% include 'scroll.html' %}
                 <div class="crops_detail_box">
 
                 </div>

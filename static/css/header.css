@@ -1,0 +1,66 @@
+/*------header css------*/
+.header_content_box{
+    margin-right: 230px;
+    margin-left: 230px;
+    display: flex;
+    flex-direction: row;
+}
+.logo_info{
+    width: 48%;
+    padding-top: 24px;
+    font-weight: 600;
+    font-size: 18px;
+}
+.main_logo{
+    width: 4%;
+    padding: 14px 0px
+}
+.main_logo img{
+    width: 38px;
+    height: 38px;
+}
+.header_content_list{
+    list-style: none;
+    display: flex;
+    justify-content: right;
+    width: 48%;
+}
+.header_content{
+    display: inline-block;
+    text-align: right;
+    padding: 8px 20px;
+    color: black;
+    border-radius: 8px;
+    border: 0px solid white;
+    font-size: 15px;
+}
+.header_content:hover{
+    background-color: #e4e4e5;
+}
+.header_content button{
+    color: black;
+    text-decoration-line: none;
+    border: none;
+    background-color: inherit;
+}
+
+/*게이지바*/
+.header_g_content{
+    width: 100%;
+    height: 3000px; /* 스크롤바가 생기도록 강제로 가상 컨텐츠 높이 생성 */
+    background-color: #fafafa;
+}
+  /* 프로그래스바 */
+.header_g_progressbar {
+    position: fixed; /* 페이지 상단에 프로그레스바 고정 */
+    height: 5px;
+    left: 0;
+    width: 100%;
+    z-index: 500;
+}
+.header_g_progressbar > .header_g_progress {
+    width: 0%; /* 프로그래스바 진행 정도 */
+    height: 100%;
+    transition: width 0.3s ease; /* 부드러운 가속도 애니메이션 추가 */
+    background-color: #7AA500;
+}

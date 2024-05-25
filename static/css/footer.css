@@ -1,0 +1,21 @@
+/*------footer css------*/
+footer .footer_ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+.footer_list{
+    text-align: left;
+    display: inline-block;
+    margin: 0px 30px;
+}
+.footer_list h5{
+    font-size: 15px;
+}
+.footer_list h6{
+    font-size: 12px;
+}
+.footer_list h6:hover{
+    cursor: pointer;
+    text-decoration-line: underline;
+}

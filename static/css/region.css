@@ -1,0 +1,56 @@
+
+.other_region_box{
+}
+.other_region_list{
+    list-style: none;
+}
+.other_region{
+    display: inline-block;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 10px 10px;
+    border-radius: 8px;
+    border: 0px solid white;
+}
+.other_region:hover{
+    color: #466D1D;
+    background-color: #e4e4e5;
+}
+.region_child_box{
+    display: none;
+}
+.region_child_list{
+    list-style: none;
+    margin-left: 10px;
+}
+.region_child{
+    display: inline-block;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 10px 10px;
+    border-radius: 8px;
+    border: 0px solid white;
+}
+.region_child:hover{
+    color: #466D1D;
+    background-color: #e4e4e5;
+}
+.region_child_child_box{
+    display: none;
+}
+.region_child_child_list{
+    list-style: none;
+    margin-left: 10px;
+}
+.region_child_child{
+    display: inline-block;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 10px 10px;
+    border-radius: 8px;
+    border: 0px solid white;
+}
+.region_child_child:hover{
+    color: #466D1D;
+    background-color: #e4e4e5;
+}

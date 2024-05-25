@@ -38,53 +38,10 @@ footer{
     background-color: #e8f3ff;
 }
 
-/*------header css------*/
-.header_content_box{
-    margin-right: 230px;
-    margin-left: 230px;
-    display: flex;
-    flex-direction: row;
-}
-.logo_info{
-    width: 48%;
-    padding-top: 24px;
-    font-weight: 600;
-    font-size: 18px;
-}
-.main_logo{
-    width: 4%;
-    padding: 17px 0px
-}
-.main_logo img{
-    width: 38px;
-    height: 38px;
-}
-.header_content_list{
-    list-style: none;
-    display: flex;
-    justify-content: right;
-    width: 48%;
-}
-.header_content{
-    display: inline-block;
-    text-align: right;
-    padding: 10px 20px;
-    color: black;
-    border-radius: 8px;
-    border: 0px solid white;
-    font-size: 15px;
-}
-.header_content:hover{
-    background-color: #e4e4e5;
-}
-.header_content button{
-    color: black;
-    text-decoration-line: none;
-    border: none;
-    background-color: inherit;
-}
-/*------article css------*/
-/*서비스1 검색*/
+
+/*-----------------------------------------article css-----------------------------------------*/
+
+/*================================서비스1 검색================================*/
 .title_q{
     display: flex;
     padding: 80px 0px 0px;
@@ -193,7 +150,10 @@ footer{
 .search_button:hover{
     background-color: #32612D;
 }
-/*서비스_intro*/
+
+
+/*================================서비스_intro================================*/
+/*소개 상단*/
 .intro_box{
     background-color: white;
     height: auto;
@@ -210,6 +170,7 @@ footer{
     padding: 20px 70px;
 }
 
+/*좌측 선택 창*/
 .intro_list_block{
     display: flex;
     flex-direction: row;
@@ -217,10 +178,14 @@ footer{
 .intro_text_list{
     display: inline-block;
 }
+.intro_text_box_box{
+    display: flex;
+    flex-direction: row;
+}
 .intro_text_box{
     width: 150px;
     height: 150px;
-    margin: 70px 130px;
+    margin: 70px 0px 0px 130px;
     background-color: #f2f4f6;
     border-radius: 9px;
     border: 0px solid white;
@@ -236,10 +201,19 @@ footer{
 .intro_text_box:hover{
     box-shadow: 0.7px 0.7px 0.7px 0.7px #e4e4e5;
 }
+.intro_select_img_box{
+    width: 130px;
+}
+.intro_select_img{
+    width: 65px;
+    height: 50px;
+    padding-top: 170px;
+}
 .bla2{
     margin-bottom: 100px;
 }
-/*지역별 농작물*/
+
+/*우측 선택 항목 공통*/
 .intro_res_list{
     display: inline-block;
     justify-content: center;
@@ -269,6 +243,18 @@ footer{
     color: gray;
     animation: text_show 2.4s forwards;
 }
+
+/*기본 화면(아직 선택X)*/
+.intro_res_img_box{
+    padding: 0px 19px;
+}
+.intro_res_img{
+    width: 130px;
+    height: 100px;
+    animation: text_show 1s forwards;
+}
+
+/*농산물 수확 순위*/
 .other_region_list_s{
     list-style: none;
     margin-bottom: 10px;
@@ -354,6 +340,8 @@ footer{
 .intro_crops_bla2{
     font-size: 10px;
 }
+
+/*농장 알아보기*/
 .intro_res_ranking_con{
     display: flex;
     margin-left: 30px;
@@ -390,7 +378,8 @@ footer{
     box-shadow: 0.7px 0.7px 0.7px 0.7px #e4e4e5;
 }
 
-/*서비스2 목록*/
+
+/*================================서비스2 목록================================*/
 .title_r{
     margin: 50px 40px 20px;
     font-size: 23px;
@@ -399,62 +388,6 @@ footer{
 .title_r_h2{
     margin: 0;
     animation: reveal 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
-}
-
-.other_region_box{
-}
-.other_region_list{
-    list-style: none;
-}
-.other_region{
-    display: inline-block;
-    cursor: pointer;
-    font-size: 18px;
-    padding: 10px 10px;
-    border-radius: 8px;
-    border: 0px solid white;
-}
-.other_region:hover{
-    color: #466D1D;
-    background-color: #e4e4e5;
-}
-.region_child_box{
-    display: none;
-}
-.region_child_list{
-    list-style: none;
-    margin-left: 10px;
-}
-.region_child{
-    display: inline-block;
-    cursor: pointer;
-    font-size: 14px;
-    padding: 10px 10px;
-    border-radius: 8px;
-    border: 0px solid white;
-}
-.region_child:hover{
-    color: #466D1D;
-    background-color: #e4e4e5;
-}
-.region_child_child_box{
-    display: none;
-}
-.region_child_child_list{
-    list-style: none;
-    margin-left: 10px;
-}
-.region_child_child{
-    display: inline-block;
-    cursor: pointer;
-    font-size: 14px;
-    padding: 10px 10px;
-    border-radius: 8px;
-    border: 0px solid white;
-}
-.region_child_child:hover{
-    color: #466D1D;
-    background-color: #e4e4e5;
 }
 .blank_line1{
     display: inline-block;
@@ -467,137 +400,185 @@ footer{
     background-color:#466D1D;
     height: 2px;
     border: none;
-    
 }
 .detail_block{
     display: flex;
 }
 
+
+/*농작물 상세 내용 구조*/
+
 .crops_detail_box{
-    background-color: white;
-    height: 700px;
+    height: 79vh;
     width: 1015px;
     margin:10px 30px
 }
 
-/*------footer css------*/
-footer .footer_ul{
-    list-style-type: none;
+.crops_detail_box{
+    background-color: inherit;
+}
+.crops_detail_up{
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    height: 63.5%;
+    margin: 0;
 }
-.footer_list{
-    text-align: left;
-    display: inline-block;
-    margin: 0px 30px;
+.crops_detail_left {
+    background-color: white;
+    border: 0px solid white;
+    border-radius: 15px;
+    width: 68.5%;
+    margin: 0;
 }
-.footer_list h5{
-    font-size: 15px;
+.crops_detail_bla1{
+    width: 3%;
 }
-.footer_list h6{
-    font-size: 12px;
+.crops_detail_right{
+    background-color: white;
+    border: 0px solid white;
+    border-radius: 15px;
+    width: 38.5%;
+    margin: 0;
 }
-.footer_list h6:hover{
-    cursor: pointer;
-    text-decoration-line: underline;
+.crops_detail_bla2{
+    height: 3%;
+}
+.crops_detail_down{
+    background-color: white;
+    border: 0px solid white;
+    border-radius: 15px;
+    height: 33.5%;
+    margin: 0;
 }
 
-
+/*농산물 그래프*/
 /*그래프*/
-.intro_res_rain_block_block{
+.crops_detail_left{
+    padding: 10px;
+}
+.intro_res_harv_title{
+    font-size: 25px;
+    font-weight: 600;
+    margin: 16px 35px 0;
+}
+.intro_res_harv_block_block{
     display: flex;
     flex-direction: row;
 }
-.rain_value_info{
-    font-size: 30px;
-    width: 190px;
-    margin-right: 35px;
-    animation: text_show 2.4s forwards;
-    font-weight: 400;
+.harv_value_text_box{
+    width: 150px;
 }
-.rain_value_box{
+.harv_value_box{
     display: flex;
     flex-direction: column;
+    margin-top: 23px;
+    margin-right: -3px;
 }
-.rain_value_box > span{
-    height: 1.84%;
-    margin-top: 20px;
-    font-size: 11px;
+.harv_value_box > span{
+    height: 1.9%;
+    margin-top: 21px;
+    font-size: 10px;
     margin-right: -17px;
 }
-.intro_res_rain_block{
+.intro_res_harv_block{
     position: relative;
-    width: 640px;
-    height: 270px;
+    width: 430px;
+    height: 240px;
     margin-left: 20px;
+    margin-top: 30px;
     border-left: 1px solid #aaa;
     border-bottom: 1px solid #aaa;
 }
-.intro_res_rain_box{
+.intro_res_harv_box{
     display: inline-block; 
     height: 270px;
 }
-.intro_res_rain_box > span{
+.intro_res_harv_box > span{
     z-index: -10;
 }
-.intro_res_rain_box > span > hr{
+.intro_res_harv_box > span > hr{
     height: 0.5px;
-    width: 640px;
+    width: 430px;
     background-color: inherit;
     border: 0px;
     border-top: 1px solid #aaa;
-    margin-top: 26px;
+    margin-top: 25.697px;
 }
-.intro_res_rain_box>div{
+.intro_res_harv_box>div{
     position: absolute;
     bottom: 0px;
-    width: 21px;
+    width: 10px;
     background-color: green;
 }
-#stick1{left: 40px;
-    animation: stick_grow 1.1s forwards;}
-#stick2{left: 100px;
-    animation: stick_grow 1.2s forwards;}
-#stick3{left: 160px;
-    animation: stick_grow 1.3s forwards;}
-#stick4{left: 220px;
-    animation: stick_grow 1.4s forwards;}
-#stick5{left: 280px;
-    animation: stick_grow 1.5s forwards;}
-#stick6{left: 340px;
-    animation: stick_grow 1.6s forwards;}
-#stick7{left: 400px;
-    animation: stick_grow 1.7s forwards;}
-#stick8{left: 460px;
-    animation: stick_grow 1.8s forwards;}
-#stick9{left: 520px;
-    animation: stick_grow 1.9s forwards;}
-#stick10{left: 580px;
-    animation: stick_grow 2.0s forwards;}
-@keyframes stick_grow{
+#harv_stick1{left: 30px;
+    animation: harv_stick_grow 1.1s forwards;}
+#harv_stick2{left: 70px;
+    animation: harv_stick_grow 1.2s forwards;}
+#harv_stick3{left: 110px;
+    animation: harv_stick_grow 1.3s forwards;}
+#harv_stick4{left: 150px;
+    animation: harv_stick_grow 1.4s forwards;}
+#harv_stick5{left: 190px;
+    animation: harv_stick_grow 1.5s forwards;}
+#harv_stick6{left: 230px;
+    animation: harv_stick_grow 1.6s forwards;}
+#harv_stick7{left: 270px;
+    animation: harv_stick_grow 1.7s forwards;}
+#harv_stick8{left: 310px;
+    animation: harv_stick_grow 1.8s forwards;}
+#harv_stick9{left: 350px;
+    animation: harv_stick_grow 1.9s forwards;}
+#harv_stick10{left: 390px;
+    animation: harv_stick_grow 2.0s forwards;}
+@keyframes harv_stick_grow{
     from{
         height: 0px;
     }to{
-        height: 200px;
+        height: 150px;
     }
 }
 
-.rain_value_year_box{
-    margin-left: 214px;
-    margin-top: -74px;
+.harv_value_year_box{
+    margin-left: 151px;
+    margin-top: -70px;
 }
-.rain_value_year_box > span{
-    font-size: 9px;
-    margin-right: 14px;
+.harv_value_year_box > span{
+    font-size: 8px;
+    margin-right: 0.398px;
 }
-.rain_value_year_list{
+.harv_value_year_list{
 
 }
-.rain_value_year_list > span{
-    font-size: 11px;
-    margin: 0px 22.4px;
+.harv_value_year_list > span{
+    font-size: 10px;
+    margin: 0px 13.135px;
 }
 
 
-
-
+/*농산물 정보*/
+.crops_detail_right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.crops_detail_name{
+    margin-bottom: 25px;
+    font-size: 15px;
+}
+.crops_detail_img_box{
+    width: 180px;
+    height: 180px;
+}
+.crops_detail_img{
+    width: inherit;
+    height: inherit;
+}
+.crops_detail_img:hover{
+    animation: upDown 0.5s linear 0s infinite alternate;
+}
+@keyframes upDown {
+	0% {margin-top: 0px;}
+	100% {margin-top: 10px;}
+}
+/*농산물 상세 정보*/

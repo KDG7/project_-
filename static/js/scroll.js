@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const scrollTop = container.scrollTop;
         const scrollHeight = container.scrollHeight;
 
-        // Add space at the top and bottom once scrolled
         if (!scrolled && scrollTop > 0) {
             scrolled = true;
             const spacerTop = document.createElement('div');
@@ -40,7 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
             item.style.transform = `scale(${scale})`;
             item.style.opacity = scale;
         });
-        // Reset sizes after 5 seconds of inactivity
         clearTimeout(resetTimer);
         resetTimer = setTimeout(() => {
             items.forEach(item => {
@@ -51,6 +49,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 500);
     });
 
-    // Timer for resetting sizes
     let resetTimer;
 });

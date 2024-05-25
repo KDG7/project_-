@@ -22,8 +22,8 @@ header {
     left: 0;
     right: 0;
     height: 70px;
-    background-color: #f2f4f6;
-    z-index: 100;
+    background-color: white;
+    z-index: 200;
 }
 
 article{
@@ -39,14 +39,31 @@ footer{
 }
 
 /*------header css------*/
-
 .header_content_box{
-    margin-right: 200px;
+    margin-right: 230px;
+    margin-left: 230px;
+    display: flex;
+    flex-direction: row;
+}
+.logo_info{
+    width: 48%;
+    padding-top: 24px;
+    font-weight: 600;
+    font-size: 18px;
+}
+.main_logo{
+    width: 4%;
+    padding: 17px 0px
+}
+.main_logo img{
+    width: 38px;
+    height: 38px;
 }
 .header_content_list{
     list-style: none;
     display: flex;
     justify-content: right;
+    width: 48%;
 }
 .header_content{
     display: inline-block;
@@ -74,20 +91,35 @@ footer{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
-.title_q h2{
+.title_q > div{
+    overflow: hidden;
+}
+.title_q > div > h2{
     margin-bottom: 0px;
     font-size: 45px;
-    opacity: 0;
-    animation: text_show 2s forwards;
+    animation: reveal 2s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+    /*opacity: 0;
+    animation: text_show 2s forwards;*/
 }
 .title_q h5{
     margin-top: 140px;
     margin-bottom: 0px;
     font-size: 25px;
-    opacity: 0;
-    animation: text_show 4s forwards;
+    
+    animation: reveal 2s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+    /*opacity: 0;
+    animation: text_show 4s forwards;*/
 }
+@keyframes reveal {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
 @keyframes text_show {
     0% {
       opacity: 0;
@@ -168,22 +200,27 @@ footer{
     width: inherit;
 }
 .intro_title{
-    font-size: 30px;
+    font-size: 45px;
     margin-top: 150px;
     padding: 100px 50px 0px;
+    color: #466D1D;
 }
 .intro_title_sub{
     font-size: 20px;
-    padding: 40px 70px;
+    padding: 20px 70px;
+}
+
+.intro_list_block{
+    display: flex;
+    flex-direction: row;
 }
 .intro_text_list{
-    display: flex;
-    justify-content: center;
+    display: inline-block;
 }
 .intro_text_box{
-    width: 270px;
-    height: 423px;
-    margin: 20px;
+    width: 150px;
+    height: 150px;
+    margin: 70px 130px;
     background-color: #f2f4f6;
     border-radius: 9px;
     border: 0px solid white;
@@ -204,10 +241,11 @@ footer{
 }
 /*지역별 농작물*/
 .intro_res_list{
-    display: flex;
+    display: inline-block;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    margin-top: 100px;
 }
 .intro_res_box{
     width: 890px;
@@ -215,24 +253,29 @@ footer{
     margin-bottom: 100px;
     border-radius: 9px;
     border: 0px solid #466D1D;
-    cursor: pointer;
+}
+#intro_res_box_default{
+    padding-top: 60px;
 }
 .intro_res_info{
     margin: 25px 20px 40px;
     font-size: 32px;
+    font-weight: 700;
+    animation: text_show 1s forwards;
 }
 .intro_res_info2{
     margin: -20px 35px 20px;
     font-size: 17px;
     color: gray;
+    animation: text_show 2.4s forwards;
 }
 .other_region_list_s{
     list-style: none;
     margin-bottom: 10px;
     display: flex;
     justify-content: center;
-    padding-right: 18px;
     background-color: white;
+    padding: 0px;
 }
 .other_region_s{
     display: inline-block;
@@ -241,7 +284,7 @@ footer{
     padding: 8px 4px;
     border-radius: 8px;
     border: 0px solid white;
-    margin: 7px 14px;
+    margin: 7px 13px;
 }
 .other_region_s:hover{
     color: #466D1D;
@@ -263,15 +306,18 @@ footer{
     width: 150px;
     height: 150px;
     margin-bottom: 30px;
+    animation: text_show 2.4s forwards;
 }
 .intro_res_ranking_1_info{
     font-size: 20px;
     margin-top: 45px;
     margin-left: 35px;
     text-align: center;
+    animation: text_show 2.4s forwards;
+    font-weight: 600;
 }
 .intro_res_rank_box{
-    max-height: 312px;
+    max-height: 290px;
     overflow-y: scroll;
     right: 0px;
 }
@@ -292,6 +338,7 @@ footer{
 }
 .intro_res_rank:hover{
     background-color: #f2f4f6;
+    cursor: pointer;
 }
 .intro_crops_name{
     font-size: 15px;
@@ -302,6 +349,7 @@ footer{
 }
 .intro_crops_revenue{
     font-size: 15px;
+    color: red;
 }
 .intro_crops_bla2{
     font-size: 10px;
@@ -309,9 +357,9 @@ footer{
 .intro_res_ranking_con{
     display: flex;
     margin-left: 30px;
-}
-.intro_res_ranking_con_box2{
-    margin-top: 50px;
+    flex-direction: row;
+    margin-top: 100px;
+    animation: text_show 2.4s forwards;
 }
 .intro_res_ranking_1_con_info{
     font-size: 20px;
@@ -326,37 +374,33 @@ footer{
     height: 150px;
     margin-bottom: 30px;
 }
-.intro_res_ranking_2_con_info{
-    font-size: 18px;
-    margin-top: 45px;
-    margin-left: 35px;
-    text-align: center;
+.go_farm_info_box{
+    padding: 130px 0px 0px 245px;
+    animation: text_show 2.4s forwards;
 }
-.intro_res_ranking_2_con_img{
-    margin-left: 100px;
-    padding-top: 45px;
-    width: 100px;
-    height: 100px;
-    margin-bottom: 30px;
+.go_farm_info{
+    padding: 25px 37px;
+    border: 0px solid white;
+    border-radius: 8px;
+    font-size: 15px;
 }
-.intro_res_ranking_3_con_info{
-    font-size: 18px;
-    margin-top: 45px;
-    margin-left: 35px;
-    text-align: center;
+.go_farm_info:hover{
+    
+    cursor: pointer;
+    box-shadow: 0.7px 0.7px 0.7px 0.7px #e4e4e5;
 }
-.intro_res_ranking_3_con_img{
-    margin-left: 100px;
-    padding-top: 45px;
-    width: 100px;
-    height: 100px;
-    margin-bottom: 30px;
-}
+
 /*서비스2 목록*/
 .title_r{
-    padding: 50px 40px 20px;
+    margin: 50px 40px 20px;
     font-size: 23px;
+    overflow: hidden;
 }
+.title_r_h2{
+    margin: 0;
+    animation: reveal 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
 .other_region_box{
 }
 .other_region_list{
@@ -375,7 +419,7 @@ footer{
     background-color: #e4e4e5;
 }
 .region_child_box{
-
+    display: none;
 }
 .region_child_list{
     list-style: none;
@@ -384,7 +428,7 @@ footer{
 .region_child{
     display: inline-block;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 14px;
     padding: 10px 10px;
     border-radius: 8px;
     border: 0px solid white;
@@ -394,7 +438,7 @@ footer{
     background-color: #e4e4e5;
 }
 .region_child_child_box{
-
+    display: none;
 }
 .region_child_child_list{
     list-style: none;
@@ -469,6 +513,7 @@ footer .footer_ul{
     width: 190px;
     margin-right: 35px;
     animation: text_show 2.4s forwards;
+    font-weight: 400;
 }
 .rain_value_box{
     display: flex;

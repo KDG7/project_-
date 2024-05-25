@@ -1,44 +1,166 @@
 <div class="other_region_box">
                 <ul class="other_region_list">
-                    <li class="other_region">서울</li>
-                    <li class="other_region">경기</li>
-                    <li class="other_region">인천</li>
-                    <li class="other_region">강원</li>
-                    <li class="other_region" style="background-color: #e4e4e5;">충청</li>
-                    <li class="other_region">대전</li>
-                    <li class="other_region">세종</li>
-                    <li class="other_region">전라</li>
-                    <li class="other_region">광주</li>
-                    <li class="other_region">경상</li>
-                    <li class="other_region">울산</li>
-                    <li class="other_region">부산</li>
-                    <li class="other_region">제주</li>
+                    <li class="other_region" onclick="showRegion('A')">서울</li>
+                    <li class="other_region" onclick="showRegion('B')">경기</li>
+                    <li class="other_region" onclick="showChildRegion('F')">인천</li>
+                    <li class="other_region" onclick="showChildRegion('G')">강원</li>
+                    <li class="other_region" onclick="showRegion('C')">충청</li>
+                    <li class="other_region" onclick="showChildRegion('H')">대전</li>
+                    <li class="other_region" onclick="showChildRegion('I')">세종</li>
+                    <li class="other_region" onclick="showRegion('D')">전라</li>
+                    <li class="other_region" onclick="showChildRegion('J')">광주</li>
+                    <li class="other_region" onclick="showRegion('E')">경상</li>
+                    <li class="other_region" onclick="showChildRegion('K')">울산</li>
+                    <li class="other_region" onclick="showChildRegion('L')">부산</li>
+                    <li class="other_region" onclick="showChildRegion('M')">제주</li>
                 </ul>
             </div>
-            <div class="region_child_child_box">
-                <ul class="region_child_child_list">
-                    <li class="region_child_child" style="background-color: #e4e4e5;">청주</li>
-                    <li class="region_child_child">충주</li>
-                    <li class="region_child_child">제천</li>
-                    <li class="region_child_child">보은</li>
-                    <li class="region_child_child">옥천</li>
-                    <li class="region_child_child">영동</li>
-                    <li class="region_child_child">증평</li>
-                    <li class="region_child_child">진천</li>
-                    <li class="region_child_child">괴산</li>
-                    <li class="region_child_child">음성</li>
-                    <li class="region_child_child">단양</li>
-                </ul>
-            </div>
-            <div class="region_child_box">
+            <div class="region_child_box" id="region_A"><!--서울-->
                 <ul class="region_child_list">
-                    <li class="region_child" style="background-color: #e4e4e5;">충북</li>
-                    <li class="region_child">충남</li>
+                    <li class="region_child" onclick="showChildRegion('A1')">강북</li>
+                    <li class="region_child" onclick="showChildRegion('A2')">강남</li>
                 </ul>
             </div>
-            <div class="region_child_child_box">
+            <div class="region_child_box" id="region_B"><!--경기-->
+                <ul class="region_child_list">
+                    <li class="region_child" onclick="showChildRegion('B1')">북부</li>
+                    <li class="region_child" onclick="showChildRegion('B2')">남부</li>
+                </ul>
+            </div>
+            <div class="region_child_box" id="region_C"><!--충청-->
+                <ul class="region_child_list">
+                    <li class="region_child" onclick="showChildRegion('C1')">충북</li>
+                    <li class="region_child" onclick="showChildRegion('C2')">충남</li>
+                </ul>
+            </div>
+            <div class="region_child_box" id="region_D"><!--전라-->
+                <ul class="region_child_list">
+                    <li class="region_child" onclick="showChildRegion('D1')">전북</li>
+                    <li class="region_child" onclick="showChildRegion('D2')">전남</li>
+                </ul>
+            </div>
+            <div class="region_child_box" id="region_E"><!--경상-->
+                <ul class="region_child_list">
+                    <li class="region_child" onclick="showChildRegion('E1')">경북</li>
+                    <li class="region_child" onclick="showChildRegion('E2')">경남</li>
+                </ul>
+            </div>
+
+            <div class="region_child_child_box" id="region_A1"><!--강북-->
                 <ul class="region_child_child_list">
-                    <li class="region_child_child" style="background-color: #e4e4e5;">청주</li>
+                    <li class="region_child_child">마포</li>
+                    <li class="region_child_child">서대문</li>
+                    <li class="region_child_child">은평</li>
+                    <li class="region_child_child">종로</li>
+                    <li class="region_child_child">중구</li>
+                    <li class="region_child_child">용산</li>
+                    <li class="region_child_child">성동</li>
+                    <li class="region_child_child">동대문</li>
+                    <li class="region_child_child">성북</li>
+                    <li class="region_child_child">강북</li>
+                    <li class="region_child_child">도봉</li>
+                    <li class="region_child_child">노원</li>
+                    <li class="region_child_child">중랑</li>
+                    <li class="region_child_child">광진</li>
+                </ul>
+            </div>
+            <div class="region_child_child_box" id="region_A2"><!--강남-->
+                <ul class="region_child_child_list">
+                    <li class="region_child_child">강서</li>
+                    <li class="region_child_child">양천</li>
+                    <li class="region_child_child">구로</li>
+                    <li class="region_child_child">영등포</li>
+                    <li class="region_child_child">동작</li>
+                    <li class="region_child_child">관악</li>
+                    <li class="region_child_child">금천</li>
+                    <li class="region_child_child">서초</li>
+                    <li class="region_child_child">강남</li>
+                    <li class="region_child_child">송파</li>
+                    <li class="region_child_child">강동</li>
+                </ul>
+            </div>
+
+            <div class="region_child_child_box" id="region_B1"><!--경기 북부-->
+                <ul class="region_child_child_list">
+                    <li class="region_child_child">고양</li>
+                    <li class="region_child_child">구리</li>
+                    <li class="region_child_child">남양주</li>
+                    <li class="region_child_child">동두천</li>
+                    <li class="region_child_child">양주</li>
+                    <li class="region_child_child">의정부</li>
+                    <li class="region_child_child">파주</li>
+                    <li class="region_child_child">포천</li>
+                    <li class="region_child_child">연천</li>
+                    <li class="region_child_child">가평</li>
+                </ul>
+            </div>
+            <div class="region_child_child_box" id="region_B2"><!--경기 남부-->
+                <ul class="region_child_child_list">
+                    <li class="region_child_child">수원</li>
+                    <li class="region_child_child">성남</li>
+                    <li class="region_child_child">용인</li>
+                    <li class="region_child_child">안양</li>
+                    <li class="region_child_child">안산</li>
+                    <li class="region_child_child">과천</li>
+                    <li class="region_child_child">광명</li>
+                    <li class="region_child_child">광주</li>
+                    <li class="region_child_child">군포</li>
+                    <li class="region_child_child">부천</li>
+                    <li class="region_child_child">시흥</li>
+                    <li class="region_child_child">김포</li>
+                    <li class="region_child_child">안성</li>
+                    <li class="region_child_child">오산</li>
+                    <li class="region_child_child">의왕</li>
+                    <li class="region_child_child">이천</li>
+                    <li class="region_child_child">평택</li>
+                    <li class="region_child_child">하남</li>
+                    <li class="region_child_child">화성</li>
+                    <li class="region_child_child">여주</li>
+                    <li class="region_child_child">양평</li>
+                </ul>
+            </div>
+
+            <div class="region_child_child_box" id="region_F"><!--인천-->
+                <ul class="region_child_child_list">
+                    <li class="region_child_child">중구</li>
+                    <li class="region_child_child">동구</li>
+                    <li class="region_child_child">미추홀구</li>
+                    <li class="region_child_child">연수구</li>
+                    <li class="region_child_child">남동구</li>
+                    <li class="region_child_child">부평구</li>
+                    <li class="region_child_child">계양구</li>
+                    <li class="region_child_child">서구</li>
+                    <li class="region_child_child">강화</li>
+                    <li class="region_child_child">옹진</li>
+                </ul>
+            </div>
+
+            <div class="region_child_child_box" id="region_G"><!--강원-->
+                <ul class="region_child_child_list">
+                    <li class="region_child_child">원주</li>
+                    <li class="region_child_child">춘천</li>
+                    <li class="region_child_child">강릉</li>
+                    <li class="region_child_child">동해</li>
+                    <li class="region_child_child">속초</li>
+                    <li class="region_child_child">삼척</li>
+                    <li class="region_child_child">태백</li>
+                    <li class="region_child_child">홍천</li>
+                    <li class="region_child_child">철원</li>
+                    <li class="region_child_child">횡성</li>
+                    <li class="region_child_child">평창</li>
+                    <li class="region_child_child">정선</li>
+                    <li class="region_child_child">영월</li>
+                    <li class="region_child_child">인제</li>
+                    <li class="region_child_child">고성</li>
+                    <li class="region_child_child">양양</li>
+                    <li class="region_child_child">화천</li>
+                    <li class="region_child_child">양구</li>
+                </ul>
+            </div>
+
+            <div class="region_child_child_box" id="region_C1"><!--충북-->
+                <ul class="region_child_child_list">
+                    <li class="region_child_child">청주</li>
                     <li class="region_child_child">충주</li>
                     <li class="region_child_child">제천</li>
                     <li class="region_child_child">보은</li>
@@ -49,5 +171,192 @@
                     <li class="region_child_child">괴산</li>
                     <li class="region_child_child">음성</li>
                     <li class="region_child_child">단양</li>
+                </ul>
+            </div>
+            <div class="region_child_child_box" id="region_C2"><!--충남-->
+                <ul class="region_child_child_list">
+                    <li class="region_child_child">천안</li>
+                    <li class="region_child_child">공주</li>
+                    <li class="region_child_child">보령</li>
+                    <li class="region_child_child">아산</li>
+                    <li class="region_child_child">서산</li>
+                    <li class="region_child_child">논산</li>
+                    <li class="region_child_child">계룡</li>
+                    <li class="region_child_child">당진</li>
+                    <li class="region_child_child">금산</li>
+                    <li class="region_child_child">부여</li>
+                    <li class="region_child_child">서천</li>
+                    <li class="region_child_child">청양</li>
+                    <li class="region_child_child">홍성</li>
+                    <li class="region_child_child">예산</li>
+                    <li class="region_child_child">태안</li>
+                </ul>
+            </div>
+
+            <div class="region_child_child_box" id="region_H"><!--대전-->
+                <ul class="region_child_child_list">
+                    <li class="region_child_child">동구</li>
+                    <li class="region_child_child">중구</li>
+                    <li class="region_child_child">서구</li>
+                    <li class="region_child_child">유성구</li>
+                    <li class="region_child_child">대덕구</li>
+                </ul>
+            </div>
+
+            <div class="region_child_child_box" id="region_I"><!--세종-->
+                <ul class="region_child_child_list">
+                    <li class="region_child_child">동 지역</li>
+                    <li class="region_child_child">조치원</li>
+                    <li class="region_child_child">연기면</li>
+                    <li class="region_child_child">금남면</li>
+                    <li class="region_child_child">장군면</li>
+                    <li class="region_child_child">부강면</li>
+                    <li class="region_child_child">연서면</li>
+                    <li class="region_child_child">연동면</li>
+                    <li class="region_child_child">전의면</li>
+                    <li class="region_child_child">전동면</li>
+                    <li class="region_child_child">소정면</li>
+                </ul>
+            </div>
+
+            <div class="region_child_child_box" id="region_D1"><!--전북-->
+                <ul class="region_child_child_list">
+                    <li class="region_child_child">전주</li>
+                    <li class="region_child_child">익산</li>
+                    <li class="region_child_child">군산</li>
+                    <li class="region_child_child">정읍</li>
+                    <li class="region_child_child">김제</li>
+                    <li class="region_child_child">남원</li>
+                    <li class="region_child_child">완주</li>
+                    <li class="region_child_child">고창</li>
+                    <li class="region_child_child">부안</li>
+                    <li class="region_child_child">임실</li>
+                    <li class="region_child_child">순창</li>
+                    <li class="region_child_child">진안</li>
+                    <li class="region_child_child">무주</li>
+                    <li class="region_child_child">장수</li>
+                </ul>
+            </div>
+            <div class="region_child_child_box" id="region_D2"><!--전남-->
+                <ul class="region_child_child_list">
+                    <li class="region_child_child">목포</li>
+                    <li class="region_child_child">여수</li>
+                    <li class="region_child_child">순천</li>
+                    <li class="region_child_child">나주</li>
+                    <li class="region_child_child">광양</li>
+                    <li class="region_child_child">담양</li>
+                    <li class="region_child_child">곡성</li>
+                    <li class="region_child_child">구례</li>
+                    <li class="region_child_child">고흥</li>
+                    <li class="region_child_child">보성</li>
+                    <li class="region_child_child">화순</li>
+                    <li class="region_child_child">장흥</li>
+                    <li class="region_child_child">강진</li>
+                    <li class="region_child_child">해남</li>
+                    <li class="region_child_child">영암</li>
+                    <li class="region_child_child">무안</li>
+                    <li class="region_child_child">함평</li>
+                    <li class="region_child_child">영광</li>
+                    <li class="region_child_child">장성</li>
+                    <li class="region_child_child">완도</li>
+                    <li class="region_child_child">진도</li>
+                    <li class="region_child_child">신안</li>
+                </ul>
+            </div>
+
+            <div class="region_child_child_box" id="region_J"><!--광주-->
+                <ul class="region_child_child_list">
+                    <li class="region_child_child">동구</li>
+                    <li class="region_child_child">서구</li>
+                    <li class="region_child_child">남구</li>
+                    <li class="region_child_child">북구</li>
+                    <li class="region_child_child">광산구</li>
+                </ul>
+            </div>
+
+            <div class="region_child_child_box" id="region_E1"><!--경북-->
+                <ul class="region_child_child_list">
+                    <li class="region_child_child">포항</li>
+                    <li class="region_child_child">경주</li>
+                    <li class="region_child_child">김천</li>
+                    <li class="region_child_child">안동</li>
+                    <li class="region_child_child">구미</li>
+                    <li class="region_child_child">영주</li>
+                    <li class="region_child_child">영천</li>
+                    <li class="region_child_child">상주</li>
+                    <li class="region_child_child">문경</li>
+                    <li class="region_child_child">경산</li>
+                    <li class="region_child_child">의성</li>
+                    <li class="region_child_child">청송</li>
+                    <li class="region_child_child">영양</li>
+                    <li class="region_child_child">영덕</li>
+                    <li class="region_child_child">청도</li>
+                    <li class="region_child_child">고령</li>
+                    <li class="region_child_child">성주</li>
+                    <li class="region_child_child">칠곡</li>
+                    <li class="region_child_child">예천</li>
+                    <li class="region_child_child">봉화</li>
+                    <li class="region_child_child">울진</li>
+                    <li class="region_child_child">울릉</li>
+                </ul>
+            </div>
+            <div class="region_child_child_box" id="region_E2"><!--경남-->
+                <ul class="region_child_child_list">
+                    <li class="region_child_child">창원</li>
+                    <li class="region_child_child">김해</li>
+                    <li class="region_child_child">진주</li>
+                    <li class="region_child_child">양산</li>
+                    <li class="region_child_child">거제</li>
+                    <li class="region_child_child">통영</li>
+                    <li class="region_child_child">사천</li>
+                    <li class="region_child_child">밀양</li>
+                    <li class="region_child_child">함안</li>
+                    <li class="region_child_child">거창</li>
+                    <li class="region_child_child">창녕</li>
+                    <li class="region_child_child">고성</li>
+                    <li class="region_child_child">하동</li>
+                    <li class="region_child_child">합천</li>
+                    <li class="region_child_child">남해</li>
+                    <li class="region_child_child">함양</li>
+                    <li class="region_child_child">산청</li>
+                    <li class="region_child_child">의령</li>
+                </ul>
+            </div>
+
+            <div class="region_child_child_box" id="region_K"><!--울산-->
+                <ul class="region_child_child_list">
+                    <li class="region_child_child">중구</li>
+                    <li class="region_child_child">남구</li>
+                    <li class="region_child_child">동구</li>
+                    <li class="region_child_child">북구</li>
+                    <li class="region_child_child">울주</li>
+                </ul>
+            </div>
+
+            <div class="region_child_child_box" id="region_L"><!--부산-->
+                <ul class="region_child_child_list">
+                    <li class="region_child_child">중구</li>
+                    <li class="region_child_child">서구</li>
+                    <li class="region_child_child">동구</li>
+                    <li class="region_child_child">영도구</li>
+                    <li class="region_child_child">부산진구</li>
+                    <li class="region_child_child">동래구</li>
+                    <li class="region_child_child">남구</li>
+                    <li class="region_child_child">북구</li>
+                    <li class="region_child_child">해운대구</li>
+                    <li class="region_child_child">사하구</li>
+                    <li class="region_child_child">금정구</li>
+                    <li class="region_child_child">강서구</li>
+                    <li class="region_child_child">연제구</li>
+                    <li class="region_child_child">수영구</li>
+                    <li class="region_child_child">사상구</li>
+                    <li class="region_child_child">기장군</li>
+                </ul>
+            </div>
+
+            <div class="region_child_child_box" id="region_M"><!--제주-->
+                <ul class="region_child_child_list">
+                    <li class="region_child_child">제주시</li>
+                    <li class="region_child_child">서귀포시</li>
                 </ul>
             </div>

@@ -14,36 +14,27 @@ function goCropsList(e){
     }
 }
 
-function intro_text_box_short(){
-    document.getElementsByClassName("intro_text_box")[0].style.height="150px";
-    document.getElementsByClassName("intro_text_box")[1].style.height="150px";
-    document.getElementsByClassName("intro_text_box")[2].style.height="150px";
-}
 
 /*누르면 하단에 div 보이는 거*/
 function showContent(content) {
+    var contentD = document.getElementById("intro_res_box_default");
     var contentA = document.getElementById("intro_res_box1");
     var contentB = document.getElementById("intro_res_box2");
     var contentC = document.getElementById("intro_res_box3");
 
     // 내용 숨김
+    contentD.style.display = "none";
     contentA.style.display = "none";
     contentB.style.display = "none";
     contentC.style.display = "none";
 
     // 선택한 내용 보이기
     if (content === "A") {
-        intro_text_box_short()
         contentA.style.display = "block";
     } else if (content === "B") {
-        intro_text_box_short()
         contentB.style.display = "block";
     } else if (content === "C") {
-        intro_text_box_short()
         contentC.style.display = "block";
     }
 }
-
-
-
 

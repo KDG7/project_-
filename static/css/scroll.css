@@ -24,12 +24,18 @@
 .crops_info {
     margin: 10px 0;
     padding: 20px;
-    background-color: #007BFF;
+    background-color: seagreen;
     color: white;
     text-align: center;
     transition: all 0.3s ease;
     opacity: 1;
     transform: scale(1);
+    border-radius: 10px;
+    border: 0px solid white;
+}
+.crops_info:hover{
+    background-color: darkgreen;
+    cursor: pointer;
 }
 
 .crops_info.shrink {

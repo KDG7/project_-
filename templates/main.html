@@ -6,26 +6,27 @@
     <title>오아시스</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='css/main.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='css/scroll.css') }}">
-    <script src="{{ url_for('static', path='js/main.js') }}"></script>
-    <script src="{{ url_for('static', path='js/scroll.js') }}"></script>
 </head>
 <body>
     <header><!--상단-->
         <div class="header_content_box">
+            <div class="logo_info">
+                Oasis
+            </div>
             <div class="main_logo">
-                <a href="{{ url_for('static', path='img/grape.png') }}"></a>
+                <img src="{{ url_for('static', path='img/logo.png') }}">
             </div>
             <ul class="header_content_list">
                 <li class="header_content"><button>소개</button></li>
                 <li class="header_content"><button>고객센터</button></li>
-                <li class="header_content"><button>자주 묻는 질문</button></li>
+                <li class="header_content"><button>제휴 문의</button></li>
             </ul>
         </div>
     </header>
     <article><!--메인-->
         <div id="service_1">
             <div class="title_q">
-                <h2>어느 지역 농산물 순위가 궁금하세요?</h2>
+                <div><h2>어느 지역 농산물 순위가 궁금하세요?</h2></div>
                 <h5>지역을 검색해보세요!</h5>
             </div>
             <div class="search_box">
@@ -42,213 +43,216 @@
         </div>
         <div id="service_intro">
             <div class="intro_box">
-                <h2 class="intro_title">여러분의 밭에 무엇을 심을지 추천해드립니다.</h2>
+                <h2 class="intro_title">이런 서비스도 한번 써보세요</h2>
                 <h2 class="intro_title_sub">간편하게 이용해보세요!</h2>
-                <div class="intro_text_list">
-                    <div class="intro_text_box" onclick="showContent('A')"><span class="intro_text">지역 별 농작물 순위</span></div>
-                    <div class="intro_text_box" onclick="showContent('B')"><span class="intro_text">지역 별 강수량</span></div>
-                    <div class="intro_text_box" onclick="showContent('C')"><span class="intro_text">전국 1등 농작물</span></div>
-                </div>
-                <div class="intro_res_list">
-                    <div class="intro_res_box" id="intro_res_box1" style="display: none;">
-                        <div class="intro_res_info">최근 1년 지역 별 농작물 순위</div>
-                        <div class="other_region_box_s">
-                            <ul class="other_region_list_s">
-                                <li class="other_region_s" style="background-color: #e4e4e5;">서울</li>
-                                <li class="other_region_s">경기</li>
-                                <li class="other_region_s">인천</li>
-                                <li class="other_region_s">강원</li>
-                                <li class="other_region_s">충청</li>
-                                <li class="other_region_s">대전</li>
-                                <li class="other_region_s">세종</li>
-                                <li class="other_region_s">전라</li>
-                                <li class="other_region_s">광주</li>
-                                <li class="other_region_s">경상</li>
-                                <li class="other_region_s">울산</li>
-                                <li class="other_region_s">부산</li>
-                                <li class="other_region_s">제주</li>
-                            </ul>
+                <div class="intro_list_block">
+                    <div class="intro_text_list">
+                        <div class="intro_text_box" onclick="showContent('A')"><span class="intro_text">농산물 수확 순위</span></div>
+                        <div class="intro_text_box" onclick="showContent('B')"><span class="intro_text">지역 별 강수량</span></div>
+                        <div class="intro_text_box" onclick="showContent('C')"><span class="intro_text">농장 알아보기</span></div>
+                    </div>
+                    <div class="intro_res_list">
+                        <div class="intro_res_box" id="intro_res_box_default">
+                            <div class="intro_res_info">왼쪽 서비스 중</div>
+                            <div class="intro_res_info">알아보고 싶은 항목을 선택해주세요</div> 
                         </div>
-                        <div class="intro_res_rank_block">
-                            <div class="intro_res_ranking">
-                                <div class="intro_res_ranking_box">
-                                    <div class="intro_res_ranking_1_info"><span>서울</span>의 1등은 <span>토마토</span>군요!</div>
+                        <div class="intro_res_box" id="intro_res_box1" style="display: none;">
+                            <div class="intro_res_info">2022 대비 수확 성장 순위</div>
+                            <div class="other_region_box_s">
+                                <ul class="other_region_list_s">
+                                    <li class="other_region_s">전국</li>
+                                    <li class="other_region_s" style="background-color: #e4e4e5;">서울</li>
+                                    <li class="other_region_s">경기</li>
+                                    <li class="other_region_s">인천</li>
+                                    <li class="other_region_s">강원</li>
+                                    <li class="other_region_s">충청</li>
+                                    <li class="other_region_s">대전</li>
+                                    <li class="other_region_s">세종</li>
+                                    <li class="other_region_s">전라</li>
+                                    <li class="other_region_s">광주</li>
+                                    <li class="other_region_s">경상</li>
+                                    <li class="other_region_s">울산</li>
+                                    <li class="other_region_s">부산</li>
+                                    <li class="other_region_s">제주</li>
+                                </ul>
+                            </div>
+                            <div class="intro_res_rank_block">
+                                <div class="intro_res_ranking">
+                                    <div class="intro_res_ranking_box">
+                                        <div class="intro_res_ranking_1_info"><span>서울</span>의 1등은 <span>토마토</span>군요!</div>
+                                    
+                                        <img class="intro_res_ranking_1_img"src="{{ url_for('static', path='img/tomato.png') }}" alt="tomato">
+                                    </div>
+                                </div>
+                                <div class="intro_res_rank_box">
+                                    <ol class="intro_res_rank_list">
+                                        <li class="intro_res_rank">
+                                            <span class="intro_crops_name">토마토</span>
+                                            <span class="intro_crops_bla1">&nbsp&nbsp&nbsp</span>
+                                            <span class="intro_crops_revenue">20</span>
+                                            <span class="intro_crops_bla2">%</span>
+                                        </li>
+                                        <li class="intro_res_rank">
+                                            <span class="intro_crops_name">토마토</span>
+                                            <span class="intro_crops_bla1">&nbsp&nbsp&nbsp</span>
+                                            <span class="intro_crops_revenue">20</span>
+                                            <span class="intro_crops_bla2">%</span>
+                                        </li>
+                                        <li class="intro_res_rank">
+                                            <span class="intro_crops_name">토마토</span>
+                                            <span class="intro_crops_bla1">&nbsp&nbsp&nbsp</span>
+                                            <span class="intro_crops_revenue">20</span>
+                                            <span class="intro_crops_bla2">%</span>
+                                        </li>
+                                        <li class="intro_res_rank">
+                                            <span class="intro_crops_name">토마토</span>
+                                            <span class="intro_crops_bla1">&nbsp&nbsp&nbsp</span>
+                                            <span class="intro_crops_revenue">20</span>
+                                            <span class="intro_crops_bla2">%</span>
+                                        </li>
+                                        <li class="intro_res_rank">
+                                            <span class="intro_crops_name">토마토</span>
+                                            <span class="intro_crops_bla1">&nbsp&nbsp&nbsp</span>
+                                            <span class="intro_crops_revenue">20</span>
+                                            <span class="intro_crops_bla2">%</span>
+                                        </li>
+                                        <li class="intro_res_rank">
+                                            <span class="intro_crops_name">토마토</span>
+                                            <span class="intro_crops_bla1">&nbsp&nbsp&nbsp</span>
+                                            <span class="intro_crops_revenue">20</span>
+                                            <span class="intro_crops_bla2">%</span>
+                                        </li>
+                                        <li class="intro_res_rank">
+                                            <span class="intro_crops_name">토마토</span>
+                                            <span class="intro_crops_bla1">&nbsp&nbsp&nbsp</span>
+                                            <span class="intro_crops_revenue">20</span>
+                                            <span class="intro_crops_bla2">%</span>
+                                        </li>
+                                        <li class="intro_res_rank">
+                                            <span class="intro_crops_name">토마토</span>
+                                            <span class="intro_crops_bla1">&nbsp&nbsp&nbsp</span>
+                                            <span class="intro_crops_revenue">20</span>
+                                            <span class="intro_crops_bla2">%</span>
+                                        </li>
+                                        <li class="intro_res_rank">
+                                            <span class="intro_crops_name">토마토</span>
+                                            <span class="intro_crops_bla1">&nbsp&nbsp&nbsp</span>
+                                            <span class="intro_crops_revenue">20</span>
+                                            <span class="intro_crops_bla2">%</span>
+                                        </li>
+                                        <li class="intro_res_rank">
+                                            <span class="intro_crops_name">토마토</span>
+                                            <span class="intro_crops_bla1">&nbsp&nbsp&nbsp</span>
+                                            <span class="intro_crops_revenue">20</span>
+                                            <span class="intro_crops_bla2">%</span>
+                                        </li>
+                                        <li class="intro_res_rank">
+                                            <span class="intro_crops_name">토마토</span>
+                                            <span class="intro_crops_bla1">&nbsp&nbsp&nbsp</span>
+                                            <span class="intro_crops_revenue">20</span>
+                                            <span class="intro_crops_bla2">%</span>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="intro_res_box" id="intro_res_box2" style="display: none;">
+                            <div class="intro_res_info">역대 강수량 정보</div>
+                            <div class="other_region_box_s">
+                                <ul class="other_region_list_s">
+                                    <li class="other_region_s">전국</li>
+                                    <li class="other_region_s" style="background-color: #e4e4e5;">서울</li>
+                                    <li class="other_region_s">경기</li>
+                                    <li class="other_region_s">인천</li>
+                                    <li class="other_region_s">강원</li>
+                                    <li class="other_region_s">충청</li>
+                                    <li class="other_region_s">대전</li>
+                                    <li class="other_region_s">세종</li>
+                                    <li class="other_region_s">전라</li>
+                                    <li class="other_region_s">광주</li>
+                                    <li class="other_region_s">경상</li>
+                                    <li class="other_region_s">울산</li>
+                                    <li class="other_region_s">부산</li>
+                                    <li class="other_region_s">제주</li>
+                                </ul>
+                            </div>
+                            <div class="intro_res_rain_block_block">
+                                <div class="rain_value_info">
+                                    <h5><span>서울</span>의 강수량은 <span>보통</span>이군요!</h5>
+                                </div>
+                                <div class="rain_value_box">
+                                    <span>1.6</span>
+                                    <span>1.5</span>
+                                    <span>1.4</span>
+                                    <span>1.3</span>
+                                    <span>1.2</span>
+                                    <span>1.1</span>
+                                    <span>1.0</span>
+                                    <span>0.9</span>
+                                    <span>0.8</span>
+                                    <span>0.7</span>
+                                </div>
+                                <div class="intro_res_rain_block">
+                                    <div class="intro_res_rain_box">
+                                        <span><hr></span>
+                                        <span><hr></span>
+                                        <span><hr></span>
+                                        <span><hr></span>
+                                        <span><hr></span>
+                                        <span><hr></span>
+                                        <span><hr></span>
+                                        <span><hr></span>
+                                        <span><hr></span>
+                                        <div id="stick1"></div>
+                                        <div id="stick2"></div>
+                                        <div id="stick3"></div>
+                                        <div id="stick4"></div>
+                                        <div id="stick5"></div>
+                                        <div id="stick6"></div>
+                                        <div id="stick7"></div>
+                                        <div id="stick8"></div>
+                                        <div id="stick9"></div>
+                                        <div id="stick10"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rain_value_year_box">
+                                <span>1m/연도</span>
+                                <span class="rain_value_year_list">
+                                    <span>14</span>
+                                    <span>15</span>
+                                    <span>16</span>
+                                    <span>17</span>
+                                    <span>18</span>
+                                    <span>19</span>
+                                    <span>20</span>
+                                    <span>21</span>
+                                    <span>22</span>
+                                    <span>23</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="intro_res_box" id="intro_res_box3" style="display: none;">
+                            <div class="intro_res_info">농장을 알아보러 갈까요</div>
+                            <div class="intro_res_info2">지역 별 농장 정보를 정리했어요!</div>
+                            <div class="intro_res_ranking_con">
+                                <div class="intro_res_ranking_con_box">
+                                    <img class="intro_res_ranking_1_con_img"src="{{ url_for('static', path='img/tomato.png') }}" alt="tomato">
+                                </div>
                                 
-                                    <img class="intro_res_ranking_1_img"src="{{ url_for('static', path='img/tomato2.png') }}" alt="tomato">
-                                </div>
-                            </div>
-                            <div class="intro_res_rank_box">
-                                <ol class="intro_res_rank_list">
-                                    <li class="intro_res_rank">
-                                        <span class="intro_crops_name">토마토</span>
-                                        <span class="intro_crops_bla1">&nbsp&nbsp평 당 수익&nbsp</span>
-                                        <span class="intro_crops_revenue">27,000</span>
-                                        <span class="intro_crops_bla2">원</span>
-                                    </li>
-                                    <li class="intro_res_rank">
-                                        <span class="intro_crops_name">토마토</span>
-                                        <span class="intro_crops_bla1">&nbsp&nbsp평 당 수익&nbsp</span>
-                                        <span class="intro_crops_revenue">27,000</span>
-                                        <span class="intro_crops_bla2">원</span>
-                                    </li>
-                                    <li class="intro_res_rank">
-                                        <span class="intro_crops_name">토마토</span>
-                                        <span class="intro_crops_bla1">&nbsp&nbsp평 당 수익&nbsp</span>
-                                        <span class="intro_crops_revenue">27,000</span>
-                                        <span class="intro_crops_bla2">원</span>
-                                    </li>
-                                    <li class="intro_res_rank">
-                                        <span class="intro_crops_name">토마토</span>
-                                        <span class="intro_crops_bla1">&nbsp&nbsp평 당 수익&nbsp</span>
-                                        <span class="intro_crops_revenue">27,000</span>
-                                        <span class="intro_crops_bla2">원</span>
-                                    </li>
-                                    <li class="intro_res_rank">
-                                        <span class="intro_crops_name">토마토</span>
-                                        <span class="intro_crops_bla1">&nbsp&nbsp평 당 수익&nbsp</span>
-                                        <span class="intro_crops_revenue">27,000</span>
-                                        <span class="intro_crops_bla2">원</span>
-                                    </li>
-                                    <li class="intro_res_rank">
-                                        <span class="intro_crops_name">토마토</span>
-                                        <span class="intro_crops_bla1">&nbsp&nbsp평 당 수익&nbsp</span>
-                                        <span class="intro_crops_revenue">27,000</span>
-                                        <span class="intro_crops_bla2">원</span>
-                                    </li>
-                                    <li class="intro_res_rank">
-                                        <span class="intro_crops_name">토마토</span>
-                                        <span class="intro_crops_bla1">&nbsp&nbsp평 당 수익&nbsp</span>
-                                        <span class="intro_crops_revenue">27,000</span>
-                                        <span class="intro_crops_bla2">원</span>
-                                    </li>
-                                    <li class="intro_res_rank">
-                                        <span class="intro_crops_name">토마토</span>
-                                        <span class="intro_crops_bla1">&nbsp&nbsp평 당 수익&nbsp</span>
-                                        <span class="intro_crops_revenue">27,000</span>
-                                        <span class="intro_crops_bla2">원</span>
-                                    </li>
-                                    <li class="intro_res_rank">
-                                        <span class="intro_crops_name">토마토</span>
-                                        <span class="intro_crops_bla1">&nbsp&nbsp평 당 수익&nbsp</span>
-                                        <span class="intro_crops_revenue">27,000</span>
-                                        <span class="intro_crops_bla2">원</span>
-                                    </li>
-                                    <li class="intro_res_rank">
-                                        <span class="intro_crops_name">토마토</span>
-                                        <span class="intro_crops_bla1">&nbsp&nbsp평 당 수익&nbsp</span>
-                                        <span class="intro_crops_revenue">27,000</span>
-                                        <span class="intro_crops_bla2">원</span>
-                                    </li>
-                                </ol>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="intro_res_box" id="intro_res_box2" style="display: none;">
-                        <div class="intro_res_info">최근 1년 지역 별 강수량</div>
-                        <div class="other_region_box_s">
-                            <ul class="other_region_list_s">
-                                <li class="other_region_s" style="background-color: #e4e4e5;">서울</li>
-                                <li class="other_region_s">경기</li>
-                                <li class="other_region_s">인천</li>
-                                <li class="other_region_s">강원</li>
-                                <li class="other_region_s">충청</li>
-                                <li class="other_region_s">대전</li>
-                                <li class="other_region_s">세종</li>
-                                <li class="other_region_s">전라</li>
-                                <li class="other_region_s">광주</li>
-                                <li class="other_region_s">경상</li>
-                                <li class="other_region_s">울산</li>
-                                <li class="other_region_s">부산</li>
-                                <li class="other_region_s">제주</li>
-                            </ul>
-                        </div>
-                        <div class="intro_res_rain_block_block">
-                            <div class="rain_value_info">
-                                <h5><span>서울</span>의 강수량은 <span>보통</span>이군요!</h5>
-                            </div>
-                            <div class="rain_value_box">
-                                <span>1.6</span>
-                                <span>1.5</span>
-                                <span>1.4</span>
-                                <span>1.3</span>
-                                <span>1.2</span>
-                                <span>1.1</span>
-                                <span>1.0</span>
-                                <span>0.9</span>
-                                <span>0.8</span>
-                                <span>0.7</span>
-                            </div>
-                            <div class="intro_res_rain_block">
-                                <div class="intro_res_rain_box">
-                                    <span><hr></span>
-                                    <span><hr></span>
-                                    <span><hr></span>
-                                    <span><hr></span>
-                                    <span><hr></span>
-                                    <span><hr></span>
-                                    <span><hr></span>
-                                    <span><hr></span>
-                                    <span><hr></span>
-                                    <div id="stick1"></div>
-                                    <div id="stick2"></div>
-                                    <div id="stick3"></div>
-                                    <div id="stick4"></div>
-                                    <div id="stick5"></div>
-                                    <div id="stick6"></div>
-                                    <div id="stick7"></div>
-                                    <div id="stick8"></div>
-                                    <div id="stick9"></div>
-                                    <div id="stick10"></div>
+                                <div class="go_farm_info_box">
+                                    <button class="go_farm_info"  type="button" onclick="">농장 바로가기</button>
                                 </div>
                             </div>
                         </div>
-                        <div class="rain_value_year_box">
-                            <span>1m/연도</span>
-                            <span class="rain_value_year_list">
-                                <span>14</span>
-                                <span>15</span>
-                                <span>16</span>
-                                <span>17</span>
-                                <span>18</span>
-                                <span>19</span>
-                                <span>20</span>
-                                <span>21</span>
-                                <span>22</span>
-                                <span>23</span>
-                            </span>
-                        </div>
+                        <div class="bla2"></div>
                     </div>
-                    <div class="intro_res_box" id="intro_res_box3" style="display: none;">
-                        <div class="intro_res_info">전국 농작물 명예의 전당</div>
-                        <div class="intro_res_info2">최근 1년 간의 자료입니다.</div>
-                        <div class="intro_res_ranking_con">
-                            <div class="intro_res_ranking_con_box">
-                                <div class="intro_res_ranking_1_con_info"><span>전국</span>의 1등은 <span>토마토</span>군요!</div>
-                            
-                                <img class="intro_res_ranking_1_con_img"src="{{ url_for('static', path='img/tomato2.png') }}" alt="tomato">
-                            </div>
-                            <div class="intro_res_ranking_con_box2">
-                                <div class="intro_res_ranking_2_con_info"><span>2등 <span>감자</span></div>
-                            
-                                <img class="intro_res_ranking_2_con_img"src="{{ url_for('static', path='img/potato2.png') }}" alt="tomato">
-                            </div>
-                            <div class="intro_res_ranking_con_box2">
-                                <div class="intro_res_ranking_3_con_info"><span>3등 <span>포도</span></div>
-                            
-                                <img class="intro_res_ranking_3_con_img"src="{{ url_for('static', path='img/grape2.png') }}" alt="tomato">
-                            </div>
-                        </div>
-                        <div class="intro_res_rain_block">
-                            
-                        </div>
-                    </div>
-                    <div class="bla2"></div>
                 </div>
             </div>
         </div>
         <div id="service_2">
             <div class="title_r">
-                <h2>충청북도 청주시 농작물을 추천드려요</h2>
+                <h2 class="title_r_h2"><span class="title_r_r">서울</span>의 농작물을 추천드려요</h2>
             </div>
             {% include 'region.html' %}
             <hr class="blank_line1">
@@ -285,4 +289,7 @@
         </ul>
     </footer>        
 </body>
+<script src="{{ url_for('static', path='js/main.js') }}"></script>
+<script src="{{ url_for('static', path='js/scroll.js') }}"></script>
+<script src="{{ url_for('static', path='js/region.js') }}"></script>
 </html>

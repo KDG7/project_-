@@ -136,7 +136,7 @@ footer{
     display: flex;
     justify-content: center;
     padding: 50px 0px;
-    margin-bottom: 100px;
+    padding-bottom: 232px;
 }
 .search_button{
     background-color: #466D1D;
@@ -150,7 +150,10 @@ footer{
 .search_button:hover{
     background-color: #32612D;
 }
-
+.service{
+	width: 100%; height: 100%;
+	position: relative;
+}
 
 /*================================서비스_intro================================*/
 /*소개 상단*/
@@ -161,9 +164,9 @@ footer{
 }
 .intro_title{
     font-size: 45px;
-    margin-top: 150px;
     padding: 100px 50px 0px;
     color: #466D1D;
+    margin-top: 0;
 }
 .intro_title_sub{
     font-size: 20px;
@@ -224,12 +227,13 @@ footer{
 .intro_res_box{
     width: 890px;
     height: 470px;
-    margin-bottom: 100px;
+    margin-bottom: 130px;
     border-radius: 9px;
     border: 0px solid #466D1D;
 }
 #intro_res_box_default{
-    padding-top: 60px;
+    padding-top: 55px;
+    margin-bottom: 0;
 }
 .intro_res_info{
     margin: 25px 20px 40px;

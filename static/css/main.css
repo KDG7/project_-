@@ -155,6 +155,36 @@ footer{
 	position: relative;
 }
 
+/*================================서비스_info================================*/
+.service_info_block{
+    background-color: white;
+    height: auto;
+    width: inherit;
+    display: flex;
+    flex-direction: column;
+}
+.service_info_up{
+    display: flex;
+    flex-direction: row;
+}
+.service_info_up>h2{
+    font-size: 45px;
+    padding: 100px 50px 0px;
+    color: #466D1D;
+    margin-top: 0;
+}
+.service_info_left{
+}
+.service_info_right{
+
+}
+
+.service_info_down{
+
+}
+
+
+
 /*================================서비스_intro================================*/
 /*소개 상단*/
 .intro_box{

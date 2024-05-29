@@ -6,17 +6,21 @@ const runners = [
     document.getElementById('runner3'),
     document.getElementById('runner4'),
     document.getElementById('runner5'),
-    document.getElementById('runner6')
+    document.getElementById('runner6'),
+    document.getElementById('runner7')
 ];
 
+var game_over = document.getElementById('race_game_over');
+
 // 미리 정해진 결과 (예: 최종 순위)
-const finalPositions = [3, 1, 6, 4, 2, 5]; // 1등: runner2, 2등: runner5, ...
+const finalPositions = [7, 6, 5, 4, 3, 2, 1]; // 1등: runner2, 2등: runner5, ...
 
 const trackWidth = 840;
 const runnerWidth = 50;
 const frameDuration = 50; // 각 프레임의 시간 간격
 
 function startRace() {
+    game_over.style.display = "none";
     document.getElementById('startButton').disabled = true;
 
     let raceTime = 0;
@@ -24,7 +28,7 @@ function startRace() {
         raceTime += frameDuration;
         runners.forEach((runner, index) => {
             let finalPosition = finalPositions[index];
-            let speed = (7 - finalPosition) * 2.0; // 순위에 따른 속도 조정 (1위가 가장 빠름)
+            let speed = (8 - finalPosition) * 2.0; // 순위에 따른 속도 조정 (1위가 가장 빠름)
             let currentLeft = parseInt(runner.style.left || 0);
             let newLeft = currentLeft + Math.random() * speed;
 
@@ -50,7 +54,7 @@ function finalizeRace() {
     });
 
     setTimeout(() => {
-        alert('경주가 종료되었습니다!');
+        game_over.style.display = "block";
         document.getElementById('startButton').disabled = false;
     }, 500); // 종료 메시지 표시
 

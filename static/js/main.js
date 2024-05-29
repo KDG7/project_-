@@ -87,3 +87,52 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('.section');
+    const motion_ls = document.querySelectorAll('.motion_l');
+    const motion_rs = document.querySelectorAll('.motion_r');
+
+    const handleScroll = () => {
+        sections.forEach(section => {
+            const sectionTop = section.getBoundingClientRect().top;
+            const triggerPoint = window.innerHeight - 100;
+
+            if (sectionTop < triggerPoint) {
+                section.classList.add('show');
+            } else {
+                section.classList.remove('show');
+            }
+        });
+        motion_ls.forEach(section => {
+            const sectionTop = section.getBoundingClientRect().top;
+            const triggerPoint = window.innerHeight - 100;
+
+            if (sectionTop < triggerPoint) {
+                section.classList.add('show');
+            } else {
+                section.classList.remove('show');
+            }
+        });
+        motion_rs.forEach(section => {
+            const sectionTop = section.getBoundingClientRect().top;
+            const triggerPoint = window.innerHeight - 100;
+
+            if (sectionTop < triggerPoint) {
+                section.classList.add('show');
+            } else {
+                section.classList.remove('show');
+            }
+        });
+    };
+
+    // 스크롤 시 handleScroll 함수 실행
+    window.addEventListener('scroll', handleScroll);
+
+    // 페이지 로드 시에도 애니메이션 적용 (초기화)
+    handleScroll();
+});

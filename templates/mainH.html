@@ -18,41 +18,52 @@
         
     </header>
 
-    <article><!--메인-->
+    <article class="container"><!--메인-->
         <div id="service_1" class="service">
+            <div class="main_img_box">                
+                <img class="main_img"src="{{ url_for('static', path='img/main_img.png') }}" alt="main">
+            </div>
             <div class="title_q">
                 <div><h2>한국 경마의 모든 것!</h2></div>
-                <h5>아래로 내려보세요!</h5>
+                <h5></h5>
             </div>
-            <div class="bla_box"></div>
+            <div class="bla_box">
+                
+                <img class="under_img"src="{{ url_for('static', path='img/under.png') }}" alt="under">
+                                
+
+            </div>
         </div>
         
-        <div id="service_info" class="service">
-            <div class="service_info_block">
-                <div class="service_info_up_box">
+        <div id="service_info" class="service section">
+            
+        </div>
+
+        <div id="service_race" class="service section">
+            <div class="service_race_block">
+                <div class="service_race_up_box">
                     <h2>지난 기록을 한 번 볼까요</h2>
-                    <div class="service_info_up">
-                        <div class="service_info_left">
-                        
+                    <div class="service_race_up">
+                        <div class="service_race_left">
+                            <h2></h2>
+                            <h2></h2>
                         </div>
-                        <div class="service_info_right">
+                        <div class="service_race_right motion_r">
                             {% include 'race.html' %}
                         </div>
                     </div>
                 </div>
-                <div class="service_info_down">
-
-                </div>
+                <div class="service_race_down"></div>
             </div>
         </div>
 
 
-        <div id="service_intro" class="service">
+        <div id="service_intro" class="service section">
             <div class="intro_box">
                 <h2 class="intro_title">이런 서비스도 한번 써보세요</h2>
                 <h2 class="intro_title_sub">간편하게 이용해보세요!</h2>
                 <div class="intro_list_block">
-                    <div class="intro_text_list">
+                    <div class="intro_text_list motion_l">
                         <div class="intro_text_box_box">
                             <div class="intro_text_box" onclick="showContent('A')"><span class="intro_text">농산물 생산 순위</span></div>
                             <span class="intro_select_img_box" id="intro_img1" style="visibility: hidden;">
@@ -228,7 +239,7 @@
                 </div>
             </div>
         </div>
-        <div id="service_2" class="service">
+        <div id="service_2" class="service section">
             <div class="title_r">
                 <h2 class="title_r_h2"><span class="title_r_r">진천</span>의 농작물을 추천드려요</h2>
             </div>

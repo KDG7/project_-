@@ -1,13 +1,24 @@
 <div class="race_game">
     <div class="game-container">
         <div id="track" class="track">
-            <div class="runner" id="runner1">선수 1</div>
-            <div class="runner" id="runner2">선수 2</div>
-            <div class="runner" id="runner3">선수 3</div>
-            <div class="runner" id="runner4">선수 4</div>
-            <div class="runner" id="runner5">선수 5</div>
-            <div class="runner" id="runner6">선수 6</div>
+            <div class="runner" id="runner1"><img class="player"src="{{ url_for('static', path='img/player1.png') }}" alt="player"></div>
+            <div class="runner" id="runner2"><img class="player"src="{{ url_for('static', path='img/player2.png') }}" alt="player"></div>
+            <div class="runner" id="runner3"><img class="player"src="{{ url_for('static', path='img/player3.png') }}" alt="player"></div>
+            <div class="runner" id="runner4"><img class="player"src="{{ url_for('static', path='img/player4.png') }}" alt="player"></div>
+            <div class="runner" id="runner5"><img class="player"src="{{ url_for('static', path='img/player5.png') }}" alt="player"></div>
+            <div class="runner" id="runner6"><img class="player"src="{{ url_for('static', path='img/player6.png') }}" alt="player"></div>
+            <div class="runner" id="runner7"><img class="player"src="{{ url_for('static', path='img/player7.png') }}" alt="player"></div>
         </div>
         <button id="startButton">게임 시작</button>
+    </div>
+</div>
+<div id="race_game_over" class="race_game_over" style="display: none;">
+    <div class="race_game_over_text_box">
+        <div class="race_game_over_text">
+            <h3>경기가 끝났습니다</h3>
+            <h3>게임 결과 : <span>+10000</span>원
+            
+            </h3>
+        </div>
     </div>
 </div>

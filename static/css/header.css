@@ -53,7 +53,7 @@
   /* 프로그래스바 */
 .header_g_progressbar {
     position: fixed; /* 페이지 상단에 프로그레스바 고정 */
-    height: 5px;
+    height: 3px;
     left: 0;
     width: 100%;
     z-index: 500;

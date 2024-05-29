@@ -16,7 +16,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 
 @app.get("/")
 async def goMain(request: Request):
-    return templates.TemplateResponse("main.html",{"request":request})
+    return templates.TemplateResponse("mainH.html",{"request":request})
 
 @app.get("/support/")
 async def goSupport(request: Request):

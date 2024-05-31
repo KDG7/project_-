@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.templating import Jinja2Templates
 from fastapi import Request
 from fastapi.responses import HTMLResponse
-import os, data
+import data
 
 from fastapi.staticfiles import StaticFiles
 
@@ -27,7 +27,7 @@ async def goSupport(request: Request):
 async def read_root(request: Request):
     try:
         all_data = data.fetch_all_data()
-        print(all_data)
+        # print(all_data)
     except Exception as e:
         return HTMLResponse(content=f"An error occurred: {e}", status_code=500)
     return templates.TemplateResponse("Info.html", {"request": request, "data": all_data})

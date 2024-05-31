@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data</title>
+</head>
+<body>
+    <h1>Data</h1>
+    <ul>
+        {% if data %}
+            {% for item in data['response']['body']['items']['item'] %} <!--데이터 접근 방법 ex) data에 저장된 dict형태를 [][]...로 꺼낸다.-->
+                <li>Date: {{ item['tm'] }} | Min Temp: {{ item['minTa'] }} | Max Temp: {{ item['maxTa'] }}</li> <!--각 데이터와 이름을 매치시킨다.-->
+            {% endfor %}
+        {% else %}
+            <li>No data available</li>
+        {% endif %}
+    </ul>
+</body>
+</html>

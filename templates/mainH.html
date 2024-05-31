@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>오아시스</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='css/main.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='css/slide.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='css/scroll.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='css/header.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='css/footer.css') }}">
@@ -28,21 +29,22 @@
                 <h5></h5>
             </div>
             <div class="bla_box">
-                
-                <img class="under_img"src="{{ url_for('static', path='img/under.png') }}" alt="under">
+                <h3 class="under_text">아래로 내리세요</h3>
+                <!--<img class="under_img"src="{{ url_for('static', path='img/under.png') }}" alt="under">-->
                                 
 
             </div>
         </div>
         
         <div id="service_info" class="service section">
-            
+            {% include 'slide.html' %}
         </div>
 
         <div id="service_race" class="service section">
             <div class="service_race_block">
                 <div class="service_race_up_box">
-                    <h2>지난 기록을 한 번 볼까요</h2>
+                    <h2 class="service_race_up_text1">경마공원 가기 전에</h2>
+                    <h2 class="service_race_up_text2">연습해볼까요</h2>
                     <div class="service_race_up">
                         <div class="service_race_left">
                             <h2></h2>
@@ -60,24 +62,24 @@
 
         <div id="service_intro" class="service section">
             <div class="intro_box">
-                <h2 class="intro_title">이런 서비스도 한번 써보세요</h2>
+                <h2 class="intro_title">경마 공원 정보예요</h2>
                 <h2 class="intro_title_sub">간편하게 이용해보세요!</h2>
                 <div class="intro_list_block">
                     <div class="intro_text_list motion_l">
                         <div class="intro_text_box_box">
-                            <div class="intro_text_box" onclick="showContent('A')"><span class="intro_text">농산물 생산 순위</span></div>
+                            <div class="intro_text_box" onclick="showContent('A')"><span class="intro_text">서울</span></div>
                             <span class="intro_select_img_box" id="intro_img1" style="visibility: hidden;">
                                 <img class="intro_select_img" src="{{ url_for('static', path='img/shovel.png') }}" alt="shovel">
                             </span>
                         </div>
                         <div class="intro_text_box_box">
-                            <div class="intro_text_box" onclick="showContent('B')"><span class="intro_text">지역 별 강수량</span></div>
+                            <div class="intro_text_box" onclick="showContent('B')"><span class="intro_text">제주</span></div>
                             <span class="intro_select_img_box" id="intro_img2" style="visibility: hidden;">
                                 <img class="intro_select_img"src="{{ url_for('static', path='img/shovel.png') }}" alt="shovel">
                             </span>
                         </div>
                         <div class="intro_text_box_box">
-                            <div class="intro_text_box" onclick="showContent('C')"><span class="intro_text">농장 알아보기</span></div>
+                            <div class="intro_text_box" onclick="showContent('C')"><span class="intro_text">부산경남</span></div>
                             <span class="intro_select_img_box" id="intro_img3" style="visibility: hidden;">
                                 <img class="intro_select_img"src="{{ url_for('static', path='img/shovel.png') }}" alt="shovel">
                             </span>
@@ -86,8 +88,8 @@
 
                     <div class="intro_res_list">
                         <div class="intro_res_box" id="intro_res_box_default">
-                            <div class="intro_res_info">왼쪽 서비스 중</div>
-                            <div class="intro_res_info">알아보고 싶은 항목을 선택해주세요</div> 
+                            <div class="intro_res_info">경마공원 중</div>
+                            <div class="intro_res_info">알아보고 싶은 곳을 선택해주세요</div> 
                             <div class="intro_res_img_box">
                                 <img class="intro_res_img"src="{{ url_for('static', path='img/shovel.png') }}" alt="shovel">
                             </div>
@@ -333,6 +335,7 @@
 </body>
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script src="{{ url_for('static', path='js/main.js') }}"></script>
+<script src="{{ url_for('static', path='js/slide.js') }}"></script>
 <script src="{{ url_for('static', path='js/scroll.js') }}"></script>
 <script src="{{ url_for('static', path='js/region.js') }}"></script>
 <script src="{{ url_for('static', path='js/header.js') }}"></script>

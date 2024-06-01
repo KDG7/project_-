@@ -6,18 +6,16 @@
     <title>오아시스</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='css/main.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='css/slide.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='css/raceHorse.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='css/scroll.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='css/header.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='css/footer.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='css/rain.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='css/region.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='css/race.css') }}">
 </head>
 <body>
-    <header><!--상단-->
-        {% include 'header.html' %}
-        
-    </header>
+    <!--상단-->
+    {% include 'header.html' %}
 
     <article class="container"><!--메인-->
         <div id="service_1" class="service">
@@ -36,10 +34,13 @@
             </div>
         </div>
         
+        <div id="go1" class="blank_block"></div>
         <div id="service_info" class="service section">
             {% include 'slide.html' %}
         </div>
 
+        
+        <div id="go2" class="blank_block"></div>
         <div id="service_race" class="service section">
             <div class="service_race_block">
                 <div class="service_race_up_box">
@@ -60,6 +61,8 @@
         </div>
 
 
+        
+        <div id="go3" class="blank_block"></div>
         <div id="service_intro" class="service section">
             <div class="intro_box">
                 <h2 class="intro_title">경마 공원 정보예요</h2>
@@ -69,19 +72,19 @@
                         <div class="intro_text_box_box">
                             <div class="intro_text_box" onclick="showContent('A')"><span class="intro_text">서울</span></div>
                             <span class="intro_select_img_box" id="intro_img1" style="visibility: hidden;">
-                                <img class="intro_select_img" src="{{ url_for('static', path='img/shovel.png') }}" alt="shovel">
+                                <img class="intro_select_img" src="{{ url_for('static', path='img/carrot.png') }}" alt="carrot">
                             </span>
                         </div>
                         <div class="intro_text_box_box">
-                            <div class="intro_text_box" onclick="showContent('B')"><span class="intro_text">제주</span></div>
+                            <div class="intro_text_box" onclick="showContent('B')"><span class="intro_text">부산경남</span></div>
                             <span class="intro_select_img_box" id="intro_img2" style="visibility: hidden;">
-                                <img class="intro_select_img"src="{{ url_for('static', path='img/shovel.png') }}" alt="shovel">
+                                <img class="intro_select_img"src="{{ url_for('static', path='img/carrot.png') }}" alt="carrot">
                             </span>
                         </div>
                         <div class="intro_text_box_box">
-                            <div class="intro_text_box" onclick="showContent('C')"><span class="intro_text">부산경남</span></div>
+                            <div class="intro_text_box" onclick="showContent('C')"><span class="intro_text">제주</span></div>
                             <span class="intro_select_img_box" id="intro_img3" style="visibility: hidden;">
-                                <img class="intro_select_img"src="{{ url_for('static', path='img/shovel.png') }}" alt="shovel">
+                                <img class="intro_select_img"src="{{ url_for('static', path='img/carrot.png') }}" alt="carrot">
                             </span>
                         </div>
                     </div>
@@ -91,7 +94,7 @@
                             <div class="intro_res_info">경마공원 중</div>
                             <div class="intro_res_info">알아보고 싶은 곳을 선택해주세요</div> 
                             <div class="intro_res_img_box">
-                                <img class="intro_res_img"src="{{ url_for('static', path='img/shovel.png') }}" alt="shovel">
+                                <img class="intro_res_img"src="{{ url_for('static', path='img/carrot.png') }}" alt="carrot">
                             </div>
                         </div>
                         <div class="intro_res_box" id="intro_res_box1" style="display: none;">
@@ -224,15 +227,22 @@
 
 
                         <div class="intro_res_box" id="intro_res_box3" style="display: none;">
-                            <div class="intro_res_info">농장을 알아보러 갈까요</div>
-                            <div class="intro_res_info2">지역 별 농장 정보를 정리했어요!</div>
-                            <div class="intro_res_ranking_con">
-                                <div class="intro_res_ranking_con_box">
-                                    <img class="intro_res_ranking_1_con_img"src="{{ url_for('static', path='img/harvesting.png') }}" alt="tomato">
+                            <div class="horse_menu_block">
+                                <div class="horse_menu_up">
+                                    <div class="horse_menu_up_left under_line">
+                                        <h3 class="horse_menu_up_text">경주마</h3>
+                                    </div>
+                                    <div class="horse_menu_up_center">
+                                        <h3 class="horse_menu_up_text">선수</h3>
+                                    </div>
+                                    <div class="horse_menu_up_right">
+                                        <h3 class="horse_menu_up_text">장소</h3>
+                                    </div>
                                 </div>
-                                
-                                <div class="go_farm_info_box">
-                                    <button class="go_farm_info"  type="button" onclick="">농장 바로가기</button>
+                                <div class="horse_menu_down">
+                                    
+                                    {% include 'raceHorse.html' %}
+                                    
                                 </div>
                             </div>
                         </div>
@@ -241,11 +251,14 @@
                 </div>
             </div>
         </div>
+
+        
+        <div id="go4" class="blank_block"></div>
         <div id="service_2" class="service section">
             <div class="title_r">
                 <h2 class="title_r_h2"><span class="title_r_r">진천</span>의 농작물을 추천드려요</h2>
             </div>
-            {% include 'region.html' %}
+
             <hr class="blank_line1">
             <hr class="blank_line2">
             <hr class="blank_line1">
@@ -336,8 +349,8 @@
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script src="{{ url_for('static', path='js/main.js') }}"></script>
 <script src="{{ url_for('static', path='js/slide.js') }}"></script>
+<script src="{{ url_for('static', path='js/raceHorse.js') }}"></script>
 <script src="{{ url_for('static', path='js/scroll.js') }}"></script>
-<script src="{{ url_for('static', path='js/region.js') }}"></script>
 <script src="{{ url_for('static', path='js/header.js') }}"></script>
 <script src="{{ url_for('static', path='js/race.js') }}"></script>
 </html>

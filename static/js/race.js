@@ -22,6 +22,7 @@ const frameDuration = 50; // 각 프레임의 시간 간격
 function startRace() {
     game_over.style.display = "none";
     document.getElementById('startButton').disabled = true;
+    document.getElementById('startButton').innerText = "다시 시작";
 
     let raceTime = 0;
     let raceInterval = setInterval(() => {

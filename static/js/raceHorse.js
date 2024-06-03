@@ -1,56 +1,56 @@
-let currentIndex = 0;
-let slides = Array.from(document.querySelectorAll('.slide_h'));
+let currentIndex_h = 0;
+let slides_h = Array.from(document.querySelectorAll('.slide_h'));
     
 
-function showSlide(index) {
+function showSlide_h(index) {
     const indicators = document.querySelectorAll('.indicator_h');
-    const totalSlides = slides.length;
+    const totalSlides_h = slides_h.length;
     const prevContainer = document.querySelector('.slider_prev_h');
     const nextContainer = document.querySelector('.slider_next_h');
     const mainContainer = document.querySelector('.slider_h .slides_h');
 
-    currentIndex = index;
+    currentIndex_h = index;
 
     // 현재 슬라이드 인덱스가 음수인 경우, 가장 마지막 슬라이드로 설정
-    if (currentIndex < 0) {
-        currentIndex = totalSlides - 1;
+    if (currentIndex_h < 0) {
+        currentIndex_h = totalSlides_h - 1;
     }
     // 현재 슬라이드 인덱스가 슬라이드 개수보다 큰 경우, 첫 번째 슬라이드로 설정
-    else if (currentIndex >= totalSlides) {
-        currentIndex = 0;
+    else if (currentIndex_h >= totalSlides_h) {
+        currentIndex_h = 0;
     }
 
     // 이전, 현재, 다음 슬라이드를 클론하여 각 컨테이너에 추가
-    prevContainer.innerHTML = slides[(currentIndex - 1 + totalSlides) % totalSlides].outerHTML;
-    mainContainer.innerHTML = slides[currentIndex].outerHTML;
-    nextContainer.innerHTML = slides[(currentIndex + 1) % totalSlides].outerHTML;
+    prevContainer.innerHTML = slides_h[(currentIndex_h - 1 + totalSlides_h) % totalSlides_h].outerHTML;
+    mainContainer.innerHTML = slides_h[currentIndex_h].outerHTML;
+    nextContainer.innerHTML = slides_h[(currentIndex_h + 1) % totalSlides_h].outerHTML;
 
     // 인디케이터 업데이트
     indicators.forEach((indicator, i) => {
-        indicator.classList.toggle('active_h', i === currentIndex);
+        indicator.classList.toggle('active_h', i === currentIndex_h);
     });
 }
 
-function initializeIndicators() {
-    const slides = document.querySelectorAll('.slide_h');
+function initializeIndicators_h() {
+    const slides_h = document.querySelectorAll('.slide_h');
     const indicatorsContainer = document.querySelector('.indicators_h');
     indicatorsContainer.innerHTML = '';
 
-    slides.forEach((index) => {
-        const indicator = document.createElement('span');
-        indicator.classList.add('indicator_h');
-        indicator.setAttribute('data-slide', index);
-        indicator.addEventListener('click', () => {
-            showSlide(index);
+    slides_h.forEach((index) => {
+        const indicator_h = document.createElement('span');
+        indicator_h.classList.add('indicator_h');
+        indicator_h.setAttribute('data-slide', index);
+        indicator_h.addEventListener('click', () => {
+            showSlide_h(index);
         });
-        indicatorsContainer.appendChild(indicator);
+        indicatorsContainer.appendChild(indicator_h);
     });
 
-    showSlide(currentIndex);
+    showSlide_h(currentIndex_h);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    initializeIndicators();
+    initializeIndicators_h();
 
     const prevButton = document.querySelector('.prev_h');
     const nextButton = document.querySelector('.next_h');
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
         void slider_prev_h.offsetWidth;
         void slider_h.offsetWidth;
 
-        showSlide(currentIndex - 1);
+        showSlide_h(currentIndex_h - 1);
         slider_prev_h.classList.add('move_rr3');
         slider_h.classList.add('move_rr2');
         slider_next_h.classList.add('move_rr');
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
         void slider_prev_h.offsetWidth;
         void slider_h.offsetWidth;
 
-        showSlide(currentIndex + 1);
+        showSlide_h(currentIndex_h + 1);
         slider_prev_h.classList.add('move_ll');
         slider_h.classList.add('move_ll2');
         slider_next_h.classList.add('move_ll3');

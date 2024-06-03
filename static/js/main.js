@@ -136,3 +136,24 @@ document.addEventListener('DOMContentLoaded', () => {
     // 페이지 로드 시에도 애니메이션 적용 (초기화)
     handleScroll();
 });
+
+
+
+$('.horse_menu_up_left').click(function() {
+    $('.horse_menu_up_center').removeClass('under_line');
+    $('.horse_menu_up_right').removeClass('under_line');
+    $(this).addClass('under_line');
+    return false;
+});
+$('.horse_menu_up_center').click(function() {
+    $('.horse_menu_up_left').removeClass('under_line');
+    $('.horse_menu_up_right').removeClass('under_line');
+    $(this).addClass('under_line');
+    return false;
+});
+$('.horse_menu_up_right').click(function() {
+    $('.horse_menu_up_left').removeClass('under_line');
+    $('.horse_menu_up_center').removeClass('under_line');
+    $(this).addClass('under_line');
+    return false;
+});

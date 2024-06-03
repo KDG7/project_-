@@ -1,24 +1,84 @@
-<div class="race_game">
-    <div class="game-container">
-        <div id="track" class="track">
-            <div class="runner" id="runner1"><img class="player"src="{{ url_for('static', path='img/player1.png') }}" alt="player"></div>
-            <div class="runner" id="runner2"><img class="player"src="{{ url_for('static', path='img/player2.png') }}" alt="player"></div>
-            <div class="runner" id="runner3"><img class="player"src="{{ url_for('static', path='img/player3.png') }}" alt="player"></div>
-            <div class="runner" id="runner4"><img class="player"src="{{ url_for('static', path='img/player4.png') }}" alt="player"></div>
-            <div class="runner" id="runner5"><img class="player"src="{{ url_for('static', path='img/player5.png') }}" alt="player"></div>
-            <div class="runner" id="runner6"><img class="player"src="{{ url_for('static', path='img/player6.png') }}" alt="player"></div>
-            <div class="runner" id="runner7"><img class="player"src="{{ url_for('static', path='img/player7.png') }}" alt="player"></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horse Racing Betting Game</title>
+    <style>
+        .race_game {
+            display: flex;
+        }
+        .game-container {
+            width: 400px;
+            height: 451px;
+            padding: 10px;
+            border: 1px solid #000;
+            overflow: auto;
+        }
+        .track-container {
+            width: 840px;
+            height: 451px;
+            padding: 10px;
+            border: 1px solid #000;
+            position: relative;
+        }
+        .runner {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+        }
+        .runner img {
+            width: 100%;
+            height: 100%;
+        }
+        #raceResult, #finalResult {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="race_game">
+        <div class="game-container" id="bettingContainer">
+            <h2>경마가 시작됩니다!</h2>
+            <p>기본금 50만원이 주어집니다</p>
+            <div id="bettingOptions">
+                <label for="betType">승식 선택:</label>
+                <select id="betType">
+                    <option value="1">단승</option>
+                    <option value="2">연승</option>
+                    <option value="3">복승</option>
+                    <option value="4">쌍승</option>
+                    <option value="5">복연승</option>
+                    <option value="6">삼복승</option>
+                    <option value="7">삼쌍승</option>
+                </select>
+                <div id="horseSelection">
+                    <label for="horseNumber1">말 번호:</label>
+                    <input type="number" id="horseNumber1" min="1" max="7">
+                    <label for="horseNumber2" style="display:none;">말 번호2:</label>
+                    <input type="number" id="horseNumber2" min="1" max="7" style="display:none;">
+                    <label for="horseNumber3" style="display:none;">말 번호3:</label>
+                    <input type="number" id="horseNumber3" min="1" max="7" style="display:none;">
+                    <label for="betAmount">배팅 금액:</label>
+                    <input type="number" id="betAmount" min="100" max="100000">
+                </div>
+            </div>
+            <div id="raceResult"></div>
+            <div id="finalResult"></div>
         </div>
-        <button id="startButton">게임 시작</button>
-    </div>
-</div>
-<div id="race_game_over" class="race_game_over" style="display: none;">
-    <div class="race_game_over_text_box">
-        <div class="race_game_over_text">
-            <h3>경기가 끝났습니다</h3>
-            <h3>게임 결과 : <span>+10000</span>원
-            
-            </h3>
+        <div class="track-container">
+            <div id="track" class="track">
+                <div class="runner" id="runner1"><img class="player" src="static/img/player1.png" alt="player"></div>
+                <div class="runner" id="runner2"><img class="player" src="static/img/player2.png" alt="player"></div>
+                <div class="runner" id="runner3"><img class="player" src="static/img/player3.png" alt="player"></div>
+                <div class="runner" id="runner4"><img class="player" src="static/img/player4.png" alt="player"></div>
+                <div class="runner" id="runner5"><img class="player" src="static/img/player5.png" alt="player"></div>
+                <div class="runner" id="runner6"><img class="player" src="static/img/player6.png" alt="player"></div>
+                <div class="runner" id="runner7"><img class="player" src="static/img/player7.png" alt="player"></div>
+            </div>
+            <button id="startButton">게임 시작</button>
         </div>
     </div>
-</div>
+    <script src="static/js/race.js"></script>
+</body>
+</html>

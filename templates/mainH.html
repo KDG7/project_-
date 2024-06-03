@@ -7,10 +7,10 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='css/main.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='css/slide.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='css/raceHorse.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='css/scroll.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='css/racePlayer.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='css/raceGround.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='css/header.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='css/footer.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='css/rain.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='css/race.css') }}">
 </head>
 <body>
@@ -65,8 +65,8 @@
         <div id="go3" class="blank_block"></div>
         <div id="service_intro" class="service section">
             <div class="intro_box">
-                <h2 class="intro_title">경마 공원 정보예요</h2>
-                <h2 class="intro_title_sub">간편하게 이용해보세요!</h2>
+                <h2 class="intro_title">경마공원 정보예요</h2>
+                <h2 class="intro_title_sub">당신을 위해 정보를 모아놨어요!</h2>
                 <div class="intro_list_block">
                     <div class="intro_text_list motion_l">
                         <div class="intro_text_box_box">
@@ -90,163 +90,23 @@
                     </div>
 
                     <div class="intro_res_list">
-                        <div class="intro_res_box" id="intro_res_box_default">
+
+                        <div class="intro_res_box motion_r" id="intro_res_box_default">
                             <div class="intro_res_info">경마공원 중</div>
                             <div class="intro_res_info">알아보고 싶은 곳을 선택해주세요</div> 
                             <div class="intro_res_img_box">
                                 <img class="intro_res_img"src="{{ url_for('static', path='img/carrot.png') }}" alt="carrot">
                             </div>
                         </div>
+
                         <div class="intro_res_box" id="intro_res_box1" style="display: none;">
-                            <div class="intro_res_info">2022 대비 생산 성장 순위</div>
-                            <div class="other_region_box_s">
-                                <ul class="other_region_list_s">
-                                    <li class="other_region_s">전국</li>
-                                    <li class="other_region_s" style="background-color: #e4e4e5;">서울</li>
-                                    <li class="other_region_s">경기</li>
-                                    <li class="other_region_s">인천</li>
-                                    <li class="other_region_s">강원</li>
-                                    <li class="other_region_s">충청</li>
-                                    <li class="other_region_s">대전</li>
-                                    <li class="other_region_s">세종</li>
-                                    <li class="other_region_s">전라</li>
-                                    <li class="other_region_s">광주</li>
-                                    <li class="other_region_s">경상</li>
-                                    <li class="other_region_s">울산</li>
-                                    <li class="other_region_s">부산</li>
-                                    <li class="other_region_s">제주</li>
-                                </ul>
-                            </div>
-                            <div class="intro_res_rank_block">
-                                <div class="intro_res_ranking">
-                                    <div class="intro_res_ranking_box">
-                                        <div class="intro_res_ranking_1_info">
-                                            <span class="intro_res_ranking_1_info_city">서울</span> 1등은 <span>토마토</span>군요!
-                                        </div>
-                                    
-                                        <img class="intro_res_ranking_1_img"src="{{ url_for('static', path='img/tomato.png') }}" alt="tomato">
-                                    </div>
-                                </div>
-                                <div class="intro_res_rank_box">
-                                    <ol class="intro_res_rank_list">
-                                        <li class="intro_res_rank">
-                                            <span class="intro_crops_name">토마토</span>
-                                            <span class="intro_crops_bla1">&nbsp&nbsp&nbsp</span>
-                                            <span class="intro_crops_revenue">20</span>
-                                            <span class="intro_crops_bla2">%</span>
-                                        </li>
-                                        <li class="intro_res_rank">
-                                            <span class="intro_crops_name">토마토</span>
-                                            <span class="intro_crops_bla1">&nbsp&nbsp&nbsp</span>
-                                            <span class="intro_crops_revenue">20</span>
-                                            <span class="intro_crops_bla2">%</span>
-                                        </li>
-                                        <li class="intro_res_rank">
-                                            <span class="intro_crops_name">토마토</span>
-                                            <span class="intro_crops_bla1">&nbsp&nbsp&nbsp</span>
-                                            <span class="intro_crops_revenue">20</span>
-                                            <span class="intro_crops_bla2">%</span>
-                                        </li>
-                                        <li class="intro_res_rank">
-                                            <span class="intro_crops_name">토마토</span>
-                                            <span class="intro_crops_bla1">&nbsp&nbsp&nbsp</span>
-                                            <span class="intro_crops_revenue">20</span>
-                                            <span class="intro_crops_bla2">%</span>
-                                        </li>
-                                        <li class="intro_res_rank">
-                                            <span class="intro_crops_name">토마토</span>
-                                            <span class="intro_crops_bla1">&nbsp&nbsp&nbsp</span>
-                                            <span class="intro_crops_revenue">20</span>
-                                            <span class="intro_crops_bla2">%</span>
-                                        </li>
-                                        <li class="intro_res_rank">
-                                            <span class="intro_crops_name">토마토</span>
-                                            <span class="intro_crops_bla1">&nbsp&nbsp&nbsp</span>
-                                            <span class="intro_crops_revenue">20</span>
-                                            <span class="intro_crops_bla2">%</span>
-                                        </li>
-                                        <li class="intro_res_rank">
-                                            <span class="intro_crops_name">토마토</span>
-                                            <span class="intro_crops_bla1">&nbsp&nbsp&nbsp</span>
-                                            <span class="intro_crops_revenue">20</span>
-                                            <span class="intro_crops_bla2">%</span>
-                                        </li>
-                                        <li class="intro_res_rank">
-                                            <span class="intro_crops_name">토마토</span>
-                                            <span class="intro_crops_bla1">&nbsp&nbsp&nbsp</span>
-                                            <span class="intro_crops_revenue">20</span>
-                                            <span class="intro_crops_bla2">%</span>
-                                        </li>
-                                        <li class="intro_res_rank">
-                                            <span class="intro_crops_name">토마토</span>
-                                            <span class="intro_crops_bla1">&nbsp&nbsp&nbsp</span>
-                                            <span class="intro_crops_revenue">20</span>
-                                            <span class="intro_crops_bla2">%</span>
-                                        </li>
-                                        <li class="intro_res_rank">
-                                            <span class="intro_crops_name">토마토</span>
-                                            <span class="intro_crops_bla1">&nbsp&nbsp&nbsp</span>
-                                            <span class="intro_crops_revenue">20</span>
-                                            <span class="intro_crops_bla2">%</span>
-                                        </li>
-                                        <li class="intro_res_rank">
-                                            <span class="intro_crops_name">토마토</span>
-                                            <span class="intro_crops_bla1">&nbsp&nbsp&nbsp</span>
-                                            <span class="intro_crops_revenue">20</span>
-                                            <span class="intro_crops_bla2">%</span>
-                                        </li>
-                                    </ol>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="intro_res_box" id="intro_res_box2" style="display: none;">
-                            <div class="intro_res_info">역대 강수량 정보</div>
-                            <div class="other_region_box_s2">
-                                <ul class="other_region_list_s2">
-                                    <li class="other_region_s2" style="background-color: #e4e4e5;">서울</li>
-                                    <li class="other_region_s2">경기</li>
-                                    <li class="other_region_s2">인천</li>
-                                    <li class="other_region_s2">강원</li>
-                                    <li class="other_region_s2">충청</li>
-                                    <li class="other_region_s2">대전</li>
-                                    <li class="other_region_s2">세종</li>
-                                    <li class="other_region_s2">전라</li>
-                                    <li class="other_region_s2">광주</li>
-                                    <li class="other_region_s2">경상</li>
-                                    <li class="other_region_s2">울산</li>
-                                    <li class="other_region_s2">부산</li>
-                                    <li class="other_region_s2">제주</li>
-                                </ul>
-                            </div>
-                            
-                            <!--강수량 정보-->
-                            {% include 'rain.html' %}
-
-                        </div>
-
-
-                        <div class="intro_res_box" id="intro_res_box3" style="display: none;">
                             <div class="horse_menu_block">
-                                <div class="horse_menu_up">
-                                    <div class="horse_menu_up_left under_line">
-                                        <h3 class="horse_menu_up_text">경주마</h3>
-                                    </div>
-                                    <div class="horse_menu_up_center">
-                                        <h3 class="horse_menu_up_text">선수</h3>
-                                    </div>
-                                    <div class="horse_menu_up_right">
-                                        <h3 class="horse_menu_up_text">장소</h3>
-                                    </div>
-                                </div>
-                                <div class="horse_menu_down">
-                                    
-                                    {% include 'raceHorse.html' %}
-                                    
-                                </div>
+
+                                {% include 'horse_menu.html' %}
+
                             </div>
                         </div>
-                        <div class="bla2"></div>
+
                     </div>
                 </div>
             </div>
@@ -255,87 +115,35 @@
         
         <div id="go4" class="blank_block"></div>
         <div id="service_2" class="service section">
-            <div class="title_r">
-                <h2 class="title_r_h2"><span class="title_r_r">진천</span>의 농작물을 추천드려요</h2>
-            </div>
+            
+            <div class="care_service_block">
+                <div class="title_r">
+                    <h2 class="title_r_h2">중독에 주의하세요</h2>
+                </div>
+                <div class="care_service_up">
+                    <div class="care_service_up_left motion_l">
 
-            <hr class="blank_line1">
-            <hr class="blank_line2">
-            <hr class="blank_line1">
-            <div class="detail_block">
-                
-                {% include 'scroll.html' %}
-
-                <div class="crops_detail_box">
-                    <div class="crops_detail_up">
-                        <div class="crops_detail_left">
-                            <div class="intro_res_harv_title">지난 생산량</div>
-                            <div class="intro_res_harv_block_block">
-                                <div class="harv_value_text_box">
-                                    <h3></h3>
-                                </div>
-                                <div class="harv_value_box">
-                                    <span>1.5</span>
-                                    <span>1.4</span>
-                                    <span>1.3</span>
-                                    <span>1.2</span>
-                                    <span>1.1</span>
-                                    <span>1.0</span>
-                                    <span>0.9</span>
-                                    <span>0.8</span>
-                                    <span>0.7</span>
-                                </div>
-                                <div class="intro_res_harv_block">
-                                    <div class="intro_res_harv_box">
-                                        <span><hr></span>
-                                        <span><hr></span>
-                                        <span><hr></span>
-                                        <span><hr></span>
-                                        <span><hr></span>
-                                        <span><hr></span>
-                                        <span><hr></span>
-                                        <span><hr></span>
-                                        <div id="harv_stick1"></div>
-                                        <div id="harv_stick2"></div>
-                                        <div id="harv_stick3"></div>
-                                        <div id="harv_stick4"></div>
-                                        <div id="harv_stick5"></div>
-                                        <div id="harv_stick6"></div>
-                                        <div id="harv_stick7"></div>
-                                        <div id="harv_stick8"></div>
-                                        <div id="harv_stick9"></div>
-                                        <div id="harv_stick10"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="harv_value_year_box">
-                                <span>1t/연도</span>
-                                <span class="harv_value_year_list">
-                                    <span>14</span>
-                                    <span>15</span>
-                                    <span>16</span>
-                                    <span>17</span>
-                                    <span>18</span>
-                                    <span>19</span>
-                                    <span>20</span>
-                                    <span>21</span>
-                                    <span>22</span>
-                                    <span>23</span>
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="crops_detail_bla1"></div>
-
-                        <div class="crops_detail_right">
-                            <div class="crops_detail_name"><h2>토마토</h2></div>
-                            <div class="crops_detail_img_box">
-                                <img class="crops_detail_img"src="{{ url_for('static', path='img/tomato.png') }}" alt="tomato">
-                            </div>
-                        </div>
                     </div>
-                    <div class="crops_detail_bla2"></div>
-                    <div class="crops_detail_down"></div>
+                    <div class="care_service_up_line1"></div>
+                    <div class="care_service_up_center motion_u">
+
+                    </div>
+                    <div class="care_service_up_line2"></div>
+                    <div class="care_service_up_right motion_r">
+
+                    </div>
+                </div>
+                <div class="care_service_center motion_u">
+
+                </div>
+                <div class="care_service_down">
+                    <div class="care_service_down_left motion_l">
+
+                    </div>
+                    <div class="care_service_down_line1"></div>
+                    <div class="care_service_down_right motion_r">
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -350,7 +158,8 @@
 <script src="{{ url_for('static', path='js/main.js') }}"></script>
 <script src="{{ url_for('static', path='js/slide.js') }}"></script>
 <script src="{{ url_for('static', path='js/raceHorse.js') }}"></script>
-<script src="{{ url_for('static', path='js/scroll.js') }}"></script>
+<script src="{{ url_for('static', path='js/racePlayer.js') }}"></script>
+<script src="{{ url_for('static', path='js/raceGround.js') }}"></script>
 <script src="{{ url_for('static', path='js/header.js') }}"></script>
 <script src="{{ url_for('static', path='js/race.js') }}"></script>
 </html>

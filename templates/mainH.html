@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='css/header.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='css/footer.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='css/race.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='css/scroll.css') }}">
 </head>
 <body>
     <!--상단-->
@@ -37,6 +38,11 @@
         <div id="go1" class="blank_block"></div>
         <div id="service_info" class="service section">
             {% include 'slide.html' %}
+            <div class="service_info_compare_block">
+                <div class="service_info_compare_title motion_u"><h2>당신에게 어울리는 게임은?</h2></div>
+                {% include 'scroll.html' %}
+                
+            </div>
         </div>
 
         
@@ -121,27 +127,27 @@
                     <h2 class="title_r_h2">중독에 주의하세요</h2>
                 </div>
                 <div class="care_service_up">
-                    <div class="care_service_up_left motion_l">
-
+                    <div class="care_service_up_left care_service_ho motion_l">
+                        <a href="https://www.kcgp.or.kr/pcMain.do"><img src="https://www.kcgp.or.kr/resources/common/images/main_2020/logo.png" alt="한국예방"></a>
                     </div>
                     <div class="care_service_up_line1"></div>
-                    <div class="care_service_up_center motion_u">
+                    <div class="care_service_up_center care_service_ho motion_u">
 
                     </div>
                     <div class="care_service_up_line2"></div>
-                    <div class="care_service_up_right motion_r">
+                    <div class="care_service_up_right care_service_ho motion_r">
 
                     </div>
                 </div>
-                <div class="care_service_center motion_u">
+                <div class="care_service_center care_service_ho motion_u">
 
                 </div>
                 <div class="care_service_down">
-                    <div class="care_service_down_left motion_l">
+                    <div class="care_service_down_left care_service_ho motion_l">
 
                     </div>
                     <div class="care_service_down_line1"></div>
-                    <div class="care_service_down_right motion_r">
+                    <div class="care_service_down_right care_service_ho motion_r">
 
                     </div>
                 </div>
@@ -162,4 +168,5 @@
 <script src="{{ url_for('static', path='js/raceGround.js') }}"></script>
 <script src="{{ url_for('static', path='js/header.js') }}"></script>
 <script src="{{ url_for('static', path='js/race.js') }}"></script>
+<script src="{{ url_for('static', path='js/scroll.js') }}"></script>
 </html>

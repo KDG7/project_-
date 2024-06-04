@@ -23,6 +23,14 @@
   flex-direction: column;
   }
   
+  .item2{
+    flex-direction: column;
+  }
+  .item3{
+    flex-direction: column;
+  }
+
+
   .info_text_text{
   font-size: 33px;
   margin: 10px;

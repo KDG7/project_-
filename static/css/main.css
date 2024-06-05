@@ -186,7 +186,7 @@ footer{
 }
 /*================================서비스_info================================*/
 .service_info_compare_block{
-    height: 1600px;
+    height: 1400px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -357,92 +357,6 @@ footer{
     animation: text_show 1s forwards;
 }
 
-/*농산물 수확 순위*/
-.other_region_list_s{
-    list-style: none;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: center;
-    background-color: white;
-    padding: 0px;
-}
-.other_region_s{
-    display: inline-block;
-    cursor: pointer;
-    font-size: 14px;
-    padding: 8px 4px;
-    border-radius: 8px;
-    border: 0px solid white;
-    margin: 7px 13px;
-}
-.other_region_s:hover{
-    color: #466D1D;
-    background-color: #e4e4e5;
-}
-.intro_res_rank_block{
-    display: flex;
-}
-.intro_res_ranking{
-    display: inline-block;
-    height:312px;
-    width: 60%;
-}
-.intro_res_ranking_box{
-}
-.intro_res_ranking_1_img{
-    margin-left: 210px;
-    padding-top: 45px;
-    width: 150px;
-    height: 150px;
-    margin-bottom: 30px;
-    animation: text_show 2.4s forwards;
-}
-.intro_res_ranking_1_info{
-    font-size: 20px;
-    margin-top: 45px;
-    margin-left: 35px;
-    text-align: center;
-    animation: text_show 2.4s forwards;
-    font-weight: 600;
-}
-.intro_res_rank_box{
-    max-height: 290px;
-    overflow-y: scroll;
-    right: 0px;
-}
-.intro_res_rank_list{
-    list-style: none;
-    display: flex;
-    justify-content: right; 
-    flex-direction: column;
-    padding-left: 0px;
-}
-.intro_res_rank{
-    display: block;
-    margin-bottom: 2px;
-    text-align: center;
-    width: 300px;
-    padding: 7px 15px;
-    background-color: white;
-}
-.intro_res_rank:hover{
-    background-color: #f2f4f6;
-    cursor: pointer;
-}
-.intro_crops_name{
-    font-size: 15px;
-}
-.intro_crops_bla1{
-    font-size: 10px;
-    color: gray;
-}
-.intro_crops_revenue{
-    font-size: 15px;
-    color: red;
-}
-.intro_crops_bla2{
-    font-size: 10px;
-}
 
 /*서울, 부산경남, 제주*/
 .horse_menu_block{
@@ -540,7 +454,7 @@ footer{
     width: 60%;
 }
 .care_service_up_left{
-    background: #fcfcfc;
+    background: #f4f4f4;
     box-shadow: 1px 1px 1px rgba(0,0,0,0.0), 1px 1px 5px 1px rgba(1,0,1,0.1);
     border-radius: 25px;
     height: 100%;
@@ -566,7 +480,7 @@ footer{
     background-color: inherit;
 }
 .care_service_up_center{
-    background-color: #fcfcfc;
+    background-color: #f4f4f4;
     box-shadow: 1px 1px 1px rgba(0,0,0,0.0), 1px 1px 5px 1px rgba(1,0,1,0.1);
     border-radius: 25px;
     height: 100%;
@@ -578,7 +492,7 @@ footer{
     background-color: inherit;
 }
 .care_service_up_right{
-    background-color: #fcfcfc;
+    background-color: #f4f4f4;
     box-shadow: 1px 1px 1px rgba(0,0,0,0.0), 1px 1px 5px 1px rgba(1,0,1,0.1);
     border-radius: 25px;
     height: 100%;
@@ -586,11 +500,23 @@ footer{
 }
 .care_service_center{
     margin: 20px 0;
-    background-color: #fcfcfc;
+    background-color: #f4f4f4;
     box-shadow: 1px 1px 1px rgba(0,0,0,0.0), 1px 1px 5px 1px rgba(1,0,1,0.1);
     border-radius: 25px;
     height: 240px;
     width: 60%;
+    text-align: left;
+}
+.care_service_center_title{
+    margin-left: 70px;
+    font-size: 26px;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+.care_service_center_text{
+    margin-left: 33px;
+    font-size: 21px;
+    font-weight: 500;
 }
 .care_service_down{
     display: flex;
@@ -599,7 +525,7 @@ footer{
     width: 60%;
 }
 .care_service_down_left{
-    background-color: #fcfcfc;
+    background-color: #f4f4f4;
     box-shadow: 1px 1px 1px rgba(0,0,0,0.0), 1px 1px 5px 1px rgba(1,0,1,0.1);
     border-radius: 25px;
     height: 100%;
@@ -610,7 +536,7 @@ footer{
     width: 2%;
 }
 .care_service_down_right{
-    background-color: #fcfcfc;
+    background-color: #f4f4f4;
     box-shadow: 1px 1px 1px rgba(0,0,0,0.0), 1px 1px 5px 1px rgba(1,0,1,0.1);
     border-radius: 25px;
     height: 100%;

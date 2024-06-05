@@ -1,25 +1,57 @@
 /* styles.css */
-.service_info_compare_box {
+.service_info_compare_choice_block{
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+}
+.service_info_compare_choice_box{
+    width: 30%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+.service_info_compare_choice{
+    width: 0;
+    height: 0;
+    border-bottom: 30px solid transparent;
+    border-top: 30px solid transparent;
+    border-left: 90px solid  rgba(000,051,000,0.7);
+    border-right: 0px solid transparent;
+    animation: rile 1.2s linear 0s infinite alternate; 
+    border-radius: 35px;
+}
+@keyframes rile {
+	0% {
+        margin-right: 0px;
+        opacity: 1;
+    }
+	100% {
+        margin-right: 30px;
+        opacity: 0.5;
+    }
+}
+
+.service_info_compare_box {
+    width: 55%;
+    display: flex;
+    justify-content: left;
     align-items: center;
     height: 79vh;
     overflow: hidden;
-    flex-direction: column;    
+    flex-direction: column;
     margin-top: 100px;
 }
 
 .service_info_compare_list {
     position: relative;
-    height: 79vh;
+    height: 60vh;
     overflow-y: scroll;
     padding: 10px;
     list-style: none;
 }
 
 .service_info_compare_cate {
-    margin: 10px 0;
-    padding: 20px;
+    padding: 14px;
     text-align: center;
     transition: all 0.3s ease;
     opacity: 1;
@@ -48,13 +80,13 @@
 
 
 .service_info_compare_cate_name{
-    font-size: 50px;
+    font-size: 40px;
     font-weight: 600;
     width: 150px;
 }
 .service_info_compare_cate_info{
-    font-size: 30px;
+    font-size: 26px;
     opacity: 80%;
     margin-left: 30px;
-    margin-top: 23px;
+    margin-top: 12px;
 }

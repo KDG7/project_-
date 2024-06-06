@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>경마 정보</title>
+    <style>
+        button {
+            margin: 5px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .info {
+            margin-top: 20px;
+        }
+        .player_info, .race_plan_info, .race_horse_info {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+        }
+        .info h2 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- 기수 정보 섹션 -->
+    <div class="info">
+        <h1>기수 정보</h1>
+        <button id="playerSeoul">서울</button>
+        <button id="playerBusan">부산경남</button>
+        <button id="playerJeju">제주</button>
+        <div>
+            <button id="playerPrev" disabled>&lt; 이전</button>
+            <button id="playerNext" disabled>다음 &gt;</button>
+        </div>
+        <div id="playerInfo"></div>
+    </div>
+
+    <!-- 경주 계획 정보 섹션 -->
+    <div class="info">
+        <h1>경주 계획 정보</h1>
+        <button id="stadiumSeoul">서울</button>
+        <button id="stadiumBusan">부산경남</button>
+        <button id="stadiumJeju">제주</button>
+        <div>
+            <button id="stadiumPrev" disabled>&lt; 이전</button>
+            <button id="stadiumNext" disabled>다음 &gt;</button>
+        </div>
+        <div id="stadiumInfo"></div>
+    </div>
+
+    <!-- 경주마 정보 섹션 -->
+    <div class="info">
+        <h1>경주마 정보</h1>
+        <button id="horseSeoul">서울</button>
+        <button id="horseBusan">부산경남</button>
+        <button id="horseJeju">제주</button>
+        <div>
+            <button id="horsePrev" disabled>&lt; 이전</button>
+            <button id="horseNext" disabled>다음 &gt;</button>
+        </div>
+        <div id="horseInfo"></div>
+    </div>
+</body>
+    <script src="../static/js/player_info_view.js"></script>
+    <script src="../static/js/horse_info_view.js"></script>
+    <script src="../static/js/stadium_info_view.js"></script>
+</html>

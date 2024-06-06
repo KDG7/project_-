@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>오아시스</title>
+    <title>말런</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='css/main.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='css/slide.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='css/raceHorse.css') }}">
@@ -40,10 +40,49 @@
         <div id="go1" class="blank_block"></div>
         <div id="service_info" class="service section">
             {% include 'slide.html' %}
+
             <div class="service_info_compare_block">
                 <div class="service_info_compare_title motion_u"><h2>당신에게 어울리는 게임은?</h2></div>
-                {% include 'scroll.html' %}
-                
+                <div class="service_info_compare_left_block">
+                    <div class="service_info_compare_left_box motion_r">
+                        <ul class="service_info_compare_left_l_list">
+                            
+                            <li class="service_info_compare_left">
+                                <span class="service_info_compare_left_name">단승</span>
+                                <span class="service_info_compare_left_info">선택한 말이 1위로 들어와야 한다.</span>
+                            </li>
+                            <li class="service_info_compare_left">
+                                <span class="service_info_compare_left_name">연승</span>
+                                <span class="service_info_compare_left_info">선택한 말이 3위 내로 들어와야 한다.</span>
+                            </li>
+                            <li class="service_info_compare_left">
+                                <span class="service_info_compare_left_name">복연승</span>
+                                <span class="service_info_compare_left_info">선택한 두 말이 3위 내로 들어와야 한다.</span>
+                            </li>
+                        </ul>
+                        <ul class="service_info_compare_left_r_list">
+                            <li class="service_info_compare_left">
+                                <span class="service_info_compare_left_name">복승</span>
+                                <span class="service_info_compare_left_info">선택한 두 말이 모두 1 ~ 2위로 들어와야 한다.</span>
+                            </li>
+                            <li class="service_info_compare_left">
+                                <span class="service_info_compare_left_name">삼복승</span>
+                                <span class="service_info_compare_left_info">선택한 세 말이 모두 1 ~ 3위로 들어와야 한다.</span>
+                            </li>
+                            <li class="service_info_compare_left">
+                                <span class="service_info_compare_left_name">쌍승</span>
+                                <span class="service_info_compare_left_info">1 ~ 2위를 맞혀야 한다.</span>
+                            </li>
+                            <li class="service_info_compare_left">
+                                <span class="service_info_compare_left_name">삼쌍승</span>
+                                <span class="service_info_compare_left_info">1 ~ 3위를 맞혀야 한다.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="service_info_compare_right_box motion_r">
+                        {% include 'scroll.html' %}
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -52,8 +91,10 @@
         <div id="service_race" class="service section">
             <div class="service_race_block">
                 <div class="service_race_up_box">
-                    <h2 class="service_race_up_text1">경마공원 가기 전에</h2>
-                    <h2 class="service_race_up_text2">연습해볼까요</h2>
+                    <div class="service_race_up_text_box">
+                        <h2 class="service_race_up_text1">경마공원 가기 전에</h2>
+                        <h2 class="service_race_up_text2">연습해볼까요</h2>
+                    </div>
                     <div class="service_race_up">
                         <div class="service_race_left">
                             {% include 'temp.html' %}

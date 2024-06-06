@@ -1,0 +1,41 @@
+.game_container {
+    width: 400px;
+    padding: 20px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.only_flex_row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#bettingOptions {
+    margin-bottom: 20px;
+}
+
+.only_flex_row>label, .only_flex_row>label {
+    display: inline-block;
+    width: 30%;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.horse_select, .horse_input[type="number"] {
+    width: 70%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+#raceResult, #finalResult {
+    margin-top: 10px;
+   
+}

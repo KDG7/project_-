@@ -11,8 +11,11 @@ const runners = [
 ];
 
 let finalPositions = [];
-let totalBet = 0;1
+let totalBet = 0;
 let totalWin = 0;
+let userSelectedHorse;
+let userBetAmount;
+let currentAmount = 500000; // 초기 금액 50만원 설정
 const trackWidth = 840;
 const runnerWidth = 50;
 const frameDuration = 50; // 각 프레임의 시간 간격
@@ -24,6 +27,9 @@ document.getElementById('betType').addEventListener('change', function() {
     document.getElementById('horseNumber2').style.display = (betType > 2) ? 'inline' : 'none';
     document.getElementById('horseNumber3').style.display = (betType > 4) ? 'inline' : 'none';
 });
+
+// 수정: 배팅 금액 단위 500원으로 조정
+document.getElementById('betAmount').step = 500;
 
 function startRace() {
     if (raceInProgress) {
@@ -39,7 +45,8 @@ function startRace() {
     const horseNumber3 = (betType > 4) ? parseInt(document.getElementById('horseNumber3').value) : null;
     const betAmount = parseInt(document.getElementById('betAmount').value);
 
-    if ((horseNumber1 < 1 || horseNumber1 > 7) || (betType > 2 && (horseNumber2 < 1 || horseNumber2 > 7)) || (betType > 4 && (horseNumber3 < 1 || horseNumber3 > 7)) || betAmount < 100 || betAmount > 100000) {
+    // 입력 값 유효성 검사
+    if ((horseNumber1 < 1 || horseNumber1 > 7) || (betType > 2 && (horseNumber2 < 1 || horseNumber2 > 7)) || (betType > 4 && (horseNumber3 < 1 || horseNumber3 > 7)) || betAmount < 100 || betAmount > 100000 || betAmount > currentAmount) {
         alert("잘못된 입력입니다.");
         return;
     }
@@ -59,22 +66,10 @@ function startRace() {
         finalPositions = data.finalPositions.map(item => item[0]);
         totalBet += betAmount;
         totalWin += data.winningAmount;
-        let resultHtml = `${data.winner}번 말이 1등이었습니다!<br>`;
-        resultHtml += `당신이 획득한 금액은 ${data.winningAmount.toFixed(2)}원입니다.<br>`;
-        resultHtml += `이번 라운드 말들의 순위입니다:<br>`;
-        data.finalPositions.forEach(([horse, position], index) => {
-            resultHtml += `${index + 1}등: ${horse}번 말<br>`;
-        });
-        resultHtml += `게임 종료!<br>`;
-        resultHtml += `총 투자한 금액: ${totalBet}원<br>`;
-        resultHtml += `당신이 획득한 총 금액: ${totalWin.toFixed(2)}원<br>`;
-        resultHtml += `순수익: ${(totalWin - totalBet).toFixed(2)}원<br>`;
-        document.getElementById('finalResult').innerHTML = resultHtml;
-        document.getElementById('raceResult').innerText = `최종 순위: ${finalPositions.map((pos, i) => `${pos}번: ${i + 1}등`).join(', ')}`;
-
+        
+        // 레이스 시작
         document.getElementById('startButton').innerText = "다시 시작";
         raceInProgress = true;
-
         startHorseRace();
     });
 }
@@ -116,7 +111,7 @@ function startHorseRace() {
 
 function finalizeRace() {
     const resultElement = document.getElementById('betResult');
-    let resultHtml  ='';
+    let resultHtml = '';
     if (finalPositions[0] === userSelectedHorse) {
         resultElement.textContent = `+${userBetAmount}`;
     } else {
@@ -126,7 +121,17 @@ function finalizeRace() {
     document.getElementById('race_game_over').style.display = 'block';
     document.getElementById('startButton').disabled = false;
 
-   
+    // 1등부터 3등까지의 말의 순위를 왼쪽 화면에 출력
+    document.getElementById('firstplace').innerText = finalPositions[0] ? `${finalPositions[0]}번 말` : '없음';
+    document.getElementById('secondplace').innerText = finalPositions[1] ? `${finalPositions[1]}번 말` : '없음';
+    document.getElementById('thirdplace').innerText = finalPositions[2] ? `${finalPositions[2]}번 말` : '없음';
+
+    // 금액 변동 결과를 업데이트
+    currentAmount += totalWin - totalBet; // 현재 금액 업데이트
+    document.getElementById('totalBet').innerText = totalBet;
+    document.getElementById('totalWin').innerText = totalWin.toFixed(2);
+    document.getElementById('netProfit').innerText = (totalWin - totalBet).toFixed(2);
+    document.getElementById('currentAmount').innerText = currentAmount.toFixed(2);
 }
 
 function resetRace() {

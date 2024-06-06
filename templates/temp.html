@@ -28,11 +28,23 @@
                 </div>
                 <div class="only_flex_row">
                     <label for="betAmount">배팅 금액</label>
-                    <input class="horse_input" type="number" id="betAmount" min="100" max="100000">
+                    <input class="horse_input" type="number" id="betAmount" min="100" max="100000" step="500">
                 </div>
             </div>
+            <!-- 금액 변동 결과와 현재 금액 -->
+            <div id="betResults">
+                <p>총 투자 금액: <span id="totalBet">0</span>원</p>
+                <p>획득한 금액: <span id="totalWin">0</span>원</p>
+                <p>손익(순수익): <span id="netProfit">0</span>원</p>
+                <p>현재 금액: <span id="currentAmount">500000</span>원</p> <!-- 초기 금액 50만원 설정 -->
+                <p>이번 라운드 1등 2등 3등 말:</p>
+                <p>1등:<span id="firstplace"></span></p>
+                <p>2등:<span id="secondplace"></span></p>
+                <p>3등:<span id="thirdplace"></span></p>
+
+            </div>
+            <!-- 1등부터 3등 말의 순위 출력 -->
+            <div id="ranks"></div>
         </div>
-        <div id="raceResult"></div>
-        <div id="finalResult"></div>
     </div>
 </div>

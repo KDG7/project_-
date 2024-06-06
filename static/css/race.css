@@ -16,8 +16,9 @@
     border: none;
     background-color: #F2f4f6;
     opacity: 80%;
-    top: -621px;
+    top: -451px;
     left: 0.3px;
+    display: none;
 }
 .race_game_over_text_box{
     display: flex;
@@ -25,9 +26,7 @@
     justify-content: center;
     height: 433px;
 }
-.race_game_over_text{
 
-}
 .game-container {
     text-align: center;
 }

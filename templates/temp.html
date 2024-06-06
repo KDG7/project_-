@@ -1,0 +1,30 @@
+<div class="race_game">
+    <div class="game-container" id="bettingContainer">
+        <h2>경마가 시작됩니다!</h2>
+        <p>기본금 50만원이 주어집니다</p>
+        <div id="bettingOptions">
+            <label for="betType">승식 선택:</label>
+            <select id="betType">
+                <option value="1">단승</option>
+                <option value="2">연승</option>
+                <option value="3">복승</option>
+                <option value="4">쌍승</option>
+                <option value="5">복연승</option>
+                <option value="6">삼복승</option>
+                <option value="7">삼쌍승</option>
+            </select>
+            <div id="horseSelection">
+                <label for="horseNumber1">말 번호:</label>
+                <input type="number" id="horseNumber1" min="1" max="7">
+                <label for="horseNumber2" style="display:none;">말 번호2:</label>
+                <input type="number" id="horseNumber2" min="1" max="7" style="display:none;">
+                <label for="horseNumber3" style="display:none;">말 번호3:</label>
+                <input type="number" id="horseNumber3" min="1" max="7" style="display:none;">
+                <label for="betAmount">배팅 금액:</label>
+                <input type="number" id="betAmount" min="100" max="100000">
+            </div>
+        </div>
+        <div id="raceResult"></div>
+        <div id="finalResult"></div>
+    </div>
+</div>

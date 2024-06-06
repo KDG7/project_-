@@ -11,11 +11,13 @@ const runners = [
 ];
 
 let finalPositions = [];
-let totalBet = 0;
+let totalBet = 0;1
 let totalWin = 0;
 const trackWidth = 840;
 const runnerWidth = 50;
 const frameDuration = 50; // 각 프레임의 시간 간격
+let raceInterval;
+let raceInProgress = false;
 
 document.getElementById('betType').addEventListener('change', function() {
     const betType = parseInt(this.value);
@@ -24,6 +26,13 @@ document.getElementById('betType').addEventListener('change', function() {
 });
 
 function startRace() {
+    if (raceInProgress) {
+        resetRace();
+        document.getElementById('startButton').innerText = "게임 시작";
+        raceInProgress = false;
+        return;
+    }
+
     const betType = parseInt(document.getElementById('betType').value);
     const horseNumber1 = parseInt(document.getElementById('horseNumber1').value);
     const horseNumber2 = (betType > 2) ? parseInt(document.getElementById('horseNumber2').value) : null;
@@ -34,7 +43,8 @@ function startRace() {
         alert("잘못된 입력입니다.");
         return;
     }
-
+    userBetAmount = betAmount;
+    userSelectedHorse = horseNumber1;
     const betData = { betType, horseNumber1, betAmount };
     if (horseNumber2) betData.horseNumber2 = horseNumber2;
     if (horseNumber3) betData.horseNumber3 = horseNumber3;
@@ -62,19 +72,22 @@ function startRace() {
         document.getElementById('finalResult').innerHTML = resultHtml;
         document.getElementById('raceResult').innerText = `최종 순위: ${finalPositions.map((pos, i) => `${pos}번: ${i + 1}등`).join(', ')}`;
 
-        document.getElementById('startButton').disabled = true;
         document.getElementById('startButton').innerText = "다시 시작";
+        raceInProgress = true;
 
-        resetRace();
         startHorseRace();
     });
 }
 
 function startHorseRace() {
     let raceTime = 0;
-    let maxTime = 10000; // 최대 레이스 시간 (10초)
-    let raceInterval = setInterval(() => {
+    let maxTime = 20000; // 최대 레이스 시간 (20초)
+    let allRunnersFinished = false;
+
+    raceInterval = setInterval(() => {
         raceTime += frameDuration;
+        allRunnersFinished = true; // 모든 말이 도착했다고 가정
+
         runners.forEach((runner, index) => {
             let finalPosition = finalPositions.indexOf(index + 1) + 1;
             let speed = (8 - finalPosition) * 2.0; // 순위에 따른 속도 조정 (1위가 가장 빠름)
@@ -83,13 +96,18 @@ function startHorseRace() {
 
             if (newLeft < trackWidth - runnerWidth) {
                 runner.style.left = newLeft + 'px';
+                allRunnersFinished = false; // 말이 아직 도착하지 않았음을 표시
             } else {
                 runner.style.left = (trackWidth - runnerWidth) + 'px';
+                if (finalPosition === 1) {
+                    clearInterval(raceInterval); // 일등 말이 도착하면 레이스 종료
+                    finalizeRace();
+                }
             }
         });
 
-        // 모든 말이 끝까지 달린 경우 확인
-        if (runners.every(runner => parseInt(runner.style.left || 0) >= trackWidth - runnerWidth) || raceTime >= maxTime) {
+        // 모든 말이 끝까지 달린 경우 또는 최대 시간에 도달한 경우
+        if (allRunnersFinished || raceTime >= maxTime) {
             clearInterval(raceInterval);
             finalizeRace();
         }
@@ -97,17 +115,30 @@ function startHorseRace() {
 }
 
 function finalizeRace() {
-    runners.forEach((runner, index) => {
-        runner.style.left = (trackWidth - runnerWidth) + 'px'; // 모든 말을 끝 지점으로 이동
-    });
+    const resultElement = document.getElementById('betResult');
+    let resultHtml  ='';
+    if (finalPositions[0] === userSelectedHorse) {
+        resultElement.textContent = `+${userBetAmount}`;
+    } else {
+        resultElement.textContent = `-${userBetAmount}`;
+    }
 
-    setTimeout(() => {
-        document.getElementById('startButton').disabled = false;
-    }, 500); // 종료 메시지 표시
+    document.getElementById('race_game_over').style.display = 'block';
+    document.getElementById('startButton').disabled = false;
+
+   
 }
 
 function resetRace() {
     runners.forEach((runner) => {
         runner.style.left = '0px'; // 출발점으로 이동
     });
+    document.getElementById('finalResult').innerHTML = ''; // 결과 초기화
+    document.getElementById('raceResult').innerText = ''; // 결과 초기화
+    document.getElementById('race_game_over').style.display = 'none'; // 종료 메시지 숨기기
+    finalPositions = []; // 최종 순위 초기화
+    clearInterval(raceInterval); // 이전 레이스 인터벌 정지
+    raceInProgress = false; // 레이스 상태 초기화
+    document.getElementById('startButton').innerText = "게임 시작"; // 버튼 텍스트 초기화
+    document.getElementById('startButton').disabled = false; // 시작 버튼 활성화
 }

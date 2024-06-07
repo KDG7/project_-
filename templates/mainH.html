@@ -115,22 +115,22 @@
         <div id="service_intro" class="service section">
             <div class="intro_box">
                 <h2 class="intro_title">경마공원 정보예요</h2>
-                <h2 class="intro_title_sub">당신을 위해 정보를 모아놨어요!</h2>
+                <h2 class="intro_title_sub">당신을 위해 상위 10위의 정보를 모아놨어요!</h2>
                 <div class="intro_list_block">
                     <div class="intro_text_list motion_l">
                         <div class="intro_text_box_box">
-                            <div class="intro_text_box" onclick="showContent('A')"><span class="intro_text">서울</span></div>
+                            <div id="seoul" class="intro_text_box" onclick="showContent('A')"><span class="intro_text">서울</span></div>
                             <span class="intro_select_img_box" id="intro_img1" style="visibility: hidden;">
                                 <img class="intro_select_img" src="{{ url_for('static', path='img/carrot.png') }}" alt="carrot">
                             </span>
                         </div>
-                        <div class="intro_text_box_box">
+                        <div id="busan" class="intro_text_box_box">
                             <div class="intro_text_box" onclick="showContent('B')"><span class="intro_text">부산경남</span></div>
                             <span class="intro_select_img_box" id="intro_img2" style="visibility: hidden;">
                                 <img class="intro_select_img"src="{{ url_for('static', path='img/carrot.png') }}" alt="carrot">
                             </span>
                         </div>
-                        <div class="intro_text_box_box">
+                        <div id="jeju" class="intro_text_box_box">
                             <div class="intro_text_box" onclick="showContent('C')"><span class="intro_text">제주</span></div>
                             <span class="intro_select_img_box" id="intro_img3" style="visibility: hidden;">
                                 <img class="intro_select_img"src="{{ url_for('static', path='img/carrot.png') }}" alt="carrot">
@@ -206,6 +206,8 @@
     </footer>        
 </body>
 <script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="{{ url_for('static', path='js/horse_data.js') }}"></script>
+<script src="{{ url_for('static', path='js/player_data.js') }}"></script>
 <script src="{{ url_for('static', path='js/main.js') }}"></script>
 <script src="{{ url_for('static', path='js/slide.js') }}"></script>
 <script src="{{ url_for('static', path='js/raceHorse.js') }}"></script>

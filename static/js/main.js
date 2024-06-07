@@ -8,6 +8,9 @@ function showContent(content) {
     var contentA1 = document.getElementById("intro_img1");
     var contentB1 = document.getElementById("intro_img2");
     var contentC1 = document.getElementById("intro_img3");
+    const horseMenuUpLeft = document.querySelector('.horse_menu_up_left');
+    const horseMenuUpCenter = document.querySelector('.horse_menu_up_center');
+    const horseMenuUpRight = document.querySelector('.horse_menu_up_right');
 
     // 내용 숨김
     contentD.style.display = "none";
@@ -23,12 +26,24 @@ function showContent(content) {
 
     // 선택한 내용 보이기
     if (content === "A") {
+        horseMenuUpLeft.classList.remove('under_line');
+        horseMenuUpCenter.classList.remove('under_line');
+        horseMenuUpRight.classList.add('under_line');
+        showContent_info("C");
         contentA.style.display = "block";
         contentA1.style.visibility = "visible";
     } else if (content === "B") {
+        horseMenuUpLeft.classList.remove('under_line');
+        horseMenuUpCenter.classList.remove('under_line');
+        horseMenuUpRight.classList.add('under_line');
+        showContent_info("C");
         contentA.style.display = "block";
         contentB1.style.visibility = "visible";
     } else if (content === "C") {
+        horseMenuUpLeft.classList.remove('under_line');
+        horseMenuUpCenter.classList.remove('under_line');
+        horseMenuUpRight.classList.add('under_line');
+        showContent_info("C");
         contentA.style.display = "block";
         contentC1.style.visibility = "visible";
     }
@@ -97,6 +112,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+$('.horse_menu_up_right').click(function() {
+    $('.horse_menu_up_left').removeClass('under_line');
+    $('.horse_menu_up_center').removeClass('under_line');
+    $(this).addClass('under_line');
+    return false;
+});
 $('.horse_menu_up_left').click(function() {
     $('.horse_menu_up_center').removeClass('under_line');
     $('.horse_menu_up_right').removeClass('under_line');
@@ -106,12 +127,6 @@ $('.horse_menu_up_left').click(function() {
 $('.horse_menu_up_center').click(function() {
     $('.horse_menu_up_left').removeClass('under_line');
     $('.horse_menu_up_right').removeClass('under_line');
-    $(this).addClass('under_line');
-    return false;
-});
-$('.horse_menu_up_right').click(function() {
-    $('.horse_menu_up_left').removeClass('under_line');
-    $('.horse_menu_up_center').removeClass('under_line');
     $(this).addClass('under_line');
     return false;
 });

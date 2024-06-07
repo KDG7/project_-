@@ -30,6 +30,24 @@
     margin-right: 5px;
     transform: translate3d(0px, 0px, -50px) rotateX(0deg) rotateY(60deg) scale(1);
   }
+  .slider_prev_h > .slide_h > h2{
+    transform: scaleY(2) scaleX(0.8);
+    font-size: 18px;
+    margin-left: 0;
+    margin-top: 45px;
+  }
+  .slider_prev_h > .slide_h > p{
+    transform: scaleY(2) scaleX(0.8);
+    font-size: 9px;
+    margin-left: 9px;
+    margin-top: 14px;
+  }
+  .slider_prev_h > .slide_h > .total_year_ranking_h{
+    transform: scaleY(2.0) scaleX(0.8);
+    font-size: 8px;
+    margin-left: 0;
+    margin-top: 55px;
+  }
   .slider_next_h {
     width: 150px;
     height: 300px;
@@ -40,6 +58,24 @@
     opacity: 0.5;
     margin-left: 5px;
     transform: translate3d(0px, 0px, -50px) rotateX(0deg) rotateY(-60deg) scale(1);
+  }
+  .slider_next_h > .slide_h > h2{
+    transform: scaleY(2) scaleX(0.8);
+    font-size: 18px;
+    margin-left: 0;
+    margin-top: 45px;
+  }
+  .slider_next_h > .slide_h > p{
+    transform: scaleY(2) scaleX(0.8);
+    font-size: 9px;
+    margin-left: 9px;
+    margin-top: 14px;
+  }
+  .slider_next_h > .slide_h > .total_year_ranking_h{
+    transform: scaleY(2.0) scaleX(0.8);
+    font-size: 8px;
+    margin-left: 0;
+    margin-top: 55px;
   }
 
   .left_img_h{
@@ -59,7 +95,7 @@
     border-radius: 23px;
   }
   
-  .slides_h {
+  #slides_h {
     display: flex;
     transition: transform 0.5s ease-in-out;
     border-radius: 23px;
@@ -69,13 +105,38 @@
     min-width: 100%;
     height: 360px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
     color: white;
     background: #333;
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
     border-radius: 23px;
   }
+  
+  .slide_h>h2{
+    font-size: 30px;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
+  .slide_h>p{
+    font-size: 15px;
+    margin: 5px 25px;
+  }
+  .total_year_ranking_h{
+    display: flex;
+    flex-direction: row;
+    font-size: 15px;
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+  .total_ranking_h{
+    width: 45%;
+  }
+  .year_ranking_h{
+    margin-left: 10px;
+    width: 45%;
+  }
+
   
   .controls_h {
     position: absolute;

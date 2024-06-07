@@ -18,13 +18,13 @@
                     <label for="horseNumber1">말 번호</label>
                     <input class="horse_input" type="number" id="horseNumber1" min="1" max="7">
                 </div>
-                <div class="only_flex_row">
-                    <label for="horseNumber2" style="display:none;">말 번호2:</label>
-                    <input class="horse_input" type="number" id="horseNumber2" min="1" max="7" style="display:none;">
+                <div class="only_flex_row" id="horseNumber2Container" style="display:none;">
+                    <label for="horseNumber2">말 번호2</label>
+                    <input class="horse_input" type="number" id="horseNumber2" min="1" max="7">
                 </div>
-                <div class="only_flex_row">
-                    <label for="horseNumber3" style="display:none;">말 번호3:</label>
-                    <input class="horse_input" type="number" id="horseNumber3" min="1" max="7" style="display:none;">
+                <div class="only_flex_row" id="horseNumber3Container" style="display:none;">
+                    <label for="horseNumber3">말 번호3</label>
+                    <input class="horse_input" type="number" id="horseNumber3" min="1" max="7">
                 </div>
                 <div class="only_flex_row">
                     <label for="betAmount">배팅 금액</label>
@@ -37,14 +37,8 @@
                 <p>획득한 금액: <span id="totalWin">0</span>원</p>
                 <p>손익(순수익): <span id="netProfit">0</span>원</p>
                 <p>현재 금액: <span id="currentAmount">500000</span>원</p> <!-- 초기 금액 50만원 설정 -->
-                <p>이번 라운드 1등 2등 3등 말:</p>
-                <p>1등:<span id="firstplace"></span></p>
-                <p>2등:<span id="secondplace"></span></p>
-                <p>3등:<span id="thirdplace"></span></p>
-
             </div>
-            <!-- 1등부터 3등 말의 순위 출력 -->
-            <div id="ranks"></div>
         </div>
     </div>
 </div>
+

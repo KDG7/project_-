@@ -2,7 +2,6 @@ from fastapi import FastAPI
 from fastapi.templating import Jinja2Templates
 from fastapi import Request
 from fastapi.responses import HTMLResponse
-from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 from typing import Optional
 import random
@@ -13,30 +12,23 @@ templates = Jinja2Templates(directory="templates")
 
 app = FastAPI()
 
-
 app.mount("/static", StaticFiles(directory="static"), name="static")
-
-#fake_items_db = [{"item_name": "Foo"}, {"item_name": "Bar"}, {"item_name": "Baz"}]
 
 @app.get("/")
 async def goMain(request: Request):
-    return templates.TemplateResponse("mainH.html",{"request":request})
+    return templates.TemplateResponse("mainH.html", {"request": request})
 
 @app.get("/support/")
 async def goSupport(request: Request):
-    return templates.TemplateResponse("support.html",{"request":request})
+    return templates.TemplateResponse("support.html", {"request": request})
 
 @app.get("/Info/", response_class=HTMLResponse)
 async def read_root(request: Request):
     try:
         all_data = data.fetch_all_data()
-        # print(all_data)
     except Exception as e:
         return HTMLResponse(content=f"An error occurred: {e}", status_code=500)
     return templates.TemplateResponse("Info.html", {"request": request, "data": all_data})
-
-#파이썬
-
 
 class BetRequest(BaseModel):
     betType: int
@@ -50,7 +42,7 @@ def calculate_winnings(betType, betAmount, horses, request):
         if request.horseNumber1 == horses[0]:
             return betAmount * 7.3
     elif betType == 2:
-        if request.horseNumber1 == horses[0] or request.horseNumber1 == horses[1]:
+        if request.horseNumber1 in horses[:3]:  # 연승 베팅 시 말이 3등 안에 들어오면 배팅에 성공
             return betAmount * 2.6
     elif betType == 3:
         if (request.horseNumber1 == horses[0] and request.horseNumber2 == horses[1]) or (request.horseNumber1 == horses[1] and request.horseNumber2 == horses[0]):
@@ -87,6 +79,8 @@ async def place_bet(request: BetRequest):
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
+
+
 #@app.get("/items/")
 #async def read_item(skip: int = 0, limit: int = 10):
 #    return fake_items_db[skip : skip + limit]

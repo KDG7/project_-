@@ -27,15 +27,13 @@ document.getElementById('betType').addEventListener('change', function() {
     const betType = parseInt(this.value);
     document.getElementById('horseNumber2Container').style.display = (betType > 2) ? 'flex' : 'none';
     document.getElementById('horseNumber3Container').style.display = (betType > 4) ? 'flex' : 'none';
+    // 올바르지 않은 입력을 숨기기 위해 에러 메시지 숨김
+    hideErrorMessages();
+    // 승식 변경 시 입력된 값을 초기화
+    document.getElementById('horseNumber1').value = '';
+    document.getElementById('horseNumber2').value = '';
+    document.getElementById('horseNumber3').value = '';
 });
-
-// 수정: 배팅 금액 단위 500원으로 조정
-document.getElementById('betAmount').step = 500;
-// 최대 배팅 금액을 현재 금액 이하로 설정
-document.getElementById('betAmount').max = currentAmount;
-// 배팅 금액 최소 및 최대값 설정
-document.getElementById('betAmount').min = 100;
-document.getElementById('betAmount').max = Math.min(100000, currentAmount);
 
 function startRace() {
     if (raceInProgress) {
@@ -51,13 +49,27 @@ function startRace() {
     const horseNumber3 = (betType > 4) ? parseInt(document.getElementById('horseNumber3').value) : null;
     const betAmount = parseInt(document.getElementById('betAmount').value);
 
-    // 입력 값 유효성 검사
-    if (
-        !horseNumber1 || horseNumber1 < 1 || horseNumber1 > 7 ||
-        (betType > 2 && (!horseNumber2 || horseNumber2 < 1 || horseNumber2 > 7)) ||
-        (betType > 4 && (!horseNumber3 || horseNumber3 < 1 || horseNumber3 > 7)) ||
-        betAmount < 100 || betAmount > 100000 || betAmount > currentAmount
-    ) {
+    // 입력 값이 모두 입력되었는지 확인
+    if (!horseNumber1 || !betAmount || (betType > 2 && horseNumber2 === null) || (betType > 4 && horseNumber3 === null)) {
+        inputErrorMSG("D"); // 입력 값이 모두 입력되지 않음
+        return;
+    }
+
+    // 각 입력 값의 유효성 검사
+    if (horseNumber1 < 1 || horseNumber1 > 7 || 
+        (betType > 2 && (horseNumber2 < 1 || horseNumber2 > 7)) || 
+        (betType > 4 && (horseNumber3 < 1 || horseNumber3 > 7))) {
+        inputErrorMSG("A"); // 잘못된 말 번호 입력
+        return;
+    }
+
+    if (betAmount < 100 || betAmount > 100000) {
+        inputErrorMSG("B"); // 배팅 금액 범위 오류
+        return;
+    }
+
+    if (betAmount > currentAmount) {
+        inputErrorMSG("C"); // 잔액 부족
         return;
     }
 
@@ -66,8 +78,12 @@ function startRace() {
     if (horseNumber2 !== null) selectedHorses.push(horseNumber2);
     if (horseNumber3 !== null) selectedHorses.push(horseNumber3);
     if (new Set(selectedHorses).size !== selectedHorses.length) {
+        inputErrorMSG("A"); // 중복된 말 번호 입력
         return;
     }
+
+    // 모든 입력이 올바르게 되었으므로 에러 메시지를 숨김
+    hideErrorMessages();
 
     // 사용자가 배팅할 때마다 잔액 업데이트
     currentAmount -= betAmount;
@@ -185,11 +201,6 @@ function resetRace() {
     document.getElementById('startButton').disabled = false; // 시작 버튼 활성화
 }
 
-
-
-
-
-
 function inputErrorMSG(content) {
     var content_n = document.getElementById("number_error_horse");
     var content_i = document.getElementById("input_error_horse");
@@ -213,7 +224,20 @@ function inputErrorMSG(content) {
         content_i.style.display = "block";
     } else if (content === "C") {
         content_m.style.display = "block";
-    } else if (content === "C") {
+    } else if (content === "D") {
         content_ni.style.display = "block";
     }
+}
+
+// 에러 메시지 숨김 함수 추가
+function hideErrorMessages() {
+    var content_n = document.getElementById("number_error_horse");
+    var content_i = document.getElementById("input_error_horse");
+    var content_m = document.getElementById("money_error_horse");
+    var content_ni = document.getElementById("no_input_error_horse");
+
+    content_n.style.display = "none";
+    content_i.style.display = "none";
+    content_m.style.display = "none";
+    content_ni.style.display = "none";
 }

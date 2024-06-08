@@ -26,7 +26,7 @@
                 <img class="main_img"src="{{ url_for('static', path='img/main_img.png') }}" alt="main">
             </div>
             <div class="title_q">
-                <div><h2>한국 경마의 모든 것!</h2></div>
+                <div><h2>한국 경마 알아보기!</h2></div>
                 <h5></h5>
             </div>
             <div class="bla_box">
@@ -96,7 +96,7 @@
                         <h2 class="service_race_up_text2">연습해봐요</h2>
                     </div>
                     <div class="service_race_up">
-                        <div class="service_race_left">
+                        <div class="service_race_left motion_l">
                             {% include 'temp.html' %}
                 
                         </div>
@@ -118,20 +118,29 @@
                 <h2 class="intro_title_sub">당신을 위해 상위 10위의 정보를 모아놨어요!</h2>
                 <div class="intro_list_block">
                     <div class="intro_text_list motion_l">
-                        <div class="intro_text_box_box">
-                            <div id="seoul" class="intro_text_box" onclick="showContent('A')"><span class="intro_text">서울</span></div>
+                        <div id="seoul" class="intro_text_box_box">
+                            <div class="intro_text_box text_box_seoul" onclick="showContent('A')">
+                                <img class="text_box_img" src="{{ url_for('static', path='img/seoulLogo.png') }}" alt="seoul">
+                                <span class="intro_text">서울</span>
+                            </div>
                             <span class="intro_select_img_box" id="intro_img1" style="visibility: hidden;">
                                 <img class="intro_select_img" src="{{ url_for('static', path='img/carrot.png') }}" alt="carrot">
                             </span>
                         </div>
                         <div id="busan" class="intro_text_box_box">
-                            <div class="intro_text_box" onclick="showContent('B')"><span class="intro_text">부산경남</span></div>
+                            <div class="intro_text_box text_box_busan" onclick="showContent('B')">
+                                <img class="text_box_img" src="{{ url_for('static', path='img/busanLogo.png') }}" alt="busan">    
+                                <span class="intro_text">부산경남</span>
+                            </div>
                             <span class="intro_select_img_box" id="intro_img2" style="visibility: hidden;">
                                 <img class="intro_select_img"src="{{ url_for('static', path='img/carrot.png') }}" alt="carrot">
                             </span>
                         </div>
                         <div id="jeju" class="intro_text_box_box">
-                            <div class="intro_text_box" onclick="showContent('C')"><span class="intro_text">제주</span></div>
+                            <div class="intro_text_box text_box_jeju" onclick="showContent('C')">
+                                <img class="text_box_img" src="{{ url_for('static', path='img/jejuLogo.png') }}" alt="jeju">
+                                <span class="intro_text">제주</span>
+                            </div>
                             <span class="intro_select_img_box" id="intro_img3" style="visibility: hidden;">
                                 <img class="intro_select_img"src="{{ url_for('static', path='img/carrot.png') }}" alt="carrot">
                             </span>

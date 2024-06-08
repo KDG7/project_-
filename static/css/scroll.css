@@ -78,3 +78,11 @@
     font-weight: 600;
     margin-top: 400px;
 }
+.service_info_logo_box{
+    margin-top: 350px;
+    margin-left: 50px;
+}
+.service_info_logo{
+    height: 200px;
+    width: 200px;   
+}

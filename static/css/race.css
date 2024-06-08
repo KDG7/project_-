@@ -1,7 +1,7 @@
 .race_game {
     display: flex;
     justify-content: center;
-    height: 100vh;
+    height: 70vh;
     margin: 0;
     font-family: Arial, sans-serif;
     position: relative;

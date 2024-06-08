@@ -1,22 +1,22 @@
 <div class="horse_menu_up">
-    <div id="seoul_rH_button" class="horse_menu_up_left under_line" onclick="showContent_info('A')">
+    <div id="seoul_rG_button" class="horse_menu_up_right under_line" onclick="showContent_info('C')">
+        <h3 class="horse_menu_up_text">장소</h3>
+    </div>
+    <div id="seoul_rH_button" class="horse_menu_up_left" onclick="showContent_info('A')">
         <h3 class="horse_menu_up_text">경주마</h3>
     </div>
     <div id="seoul_rP_button" class="horse_menu_up_center" onclick="showContent_info('B')">
         <h3 class="horse_menu_up_text">선수</h3>
     </div>
-    <div id="seoul_rG_button" class="horse_menu_up_right" onclick="showContent_info('C')">
-        <h3 class="horse_menu_up_text">장소</h3>
-    </div>
 </div>
 <div class="horse_menu_down">
-    <div id="rH" class="horse_menu_down_rH">
+    <div id="rG" class="horse_menu_down_rG">
+        {% include 'raceGround.html' %}
+    </div>
+    <div id="rH" class="horse_menu_down_rH" style="display: none;">
         {% include 'raceHorse.html' %}
     </div>
     <div id="rP" class="horse_menu_down_rP" style="display: none;">
         {% include 'racePlayer.html' %}
-    </div>
-    <div id="rG" class="horse_menu_down_rG" style="display: none;">
-        {% include 'raceGround.html' %}
     </div>
 </div>

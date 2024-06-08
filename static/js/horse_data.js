@@ -8,6 +8,7 @@ function fetchDataAndDisplayItems_h() {
             .then(data => {
                 const items = data.response.body.items.item;
                 filteredItems = items.filter(item => item.meet === '서울');
+                filteredItems.sort((a, b) => b.ord1CntT - a.ord1CntT);
                 resolve(filteredItems);
             })
             .catch(error => {
@@ -26,6 +27,7 @@ function busanfetchDataAndDisplayItems_h() {
             .then(data => {
                 const items = data.response.body.items.item;
                 filteredItems = items.filter(item => item.meet === '부산경남');
+                filteredItems.sort((a, b) => b.ord1CntT - a.ord1CntT);
                 resolve(filteredItems);
             })
             .catch(error => {
@@ -44,6 +46,7 @@ function jejufetchDataAndDisplayItems_h() {
             .then(data => {
                 const items = data.response.body.items.item;
                 filteredItems = items.filter(item => item.meet === '제주');
+                filteredItems.sort((a, b) => b.ord1CntT - a.ord1CntT);
                 resolve(filteredItems);
             })
             .catch(error => {

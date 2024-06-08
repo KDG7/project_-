@@ -7,15 +7,33 @@ footer .footer_ul{
 .footer_list{
     text-align: left;
     display: inline-block;
-    margin: 0px 30px;
+}
+.footer_list_width1{
+    width: 40%;
+}
+.footer_list_width2{
 }
 .footer_list h5{
     font-size: 15px;
 }
-.footer_list h6{
-    font-size: 12px;
+.footer_span_list{
+    display: flex;
+    flex-direction: row;
 }
-.footer_list h6:hover{
+.footer_span_list>span{
+    font-size: 15px;
+    margin-top: 20px;
+    margin-right: 50px;
+}
+.footer_span_list>span>a{
+    text-decoration: none;
+    color: inherit;
+}
+.footer_span_list>span:hover{
     cursor: pointer;
     text-decoration-line: underline;
+}
+.footer_list_width2>.footer_span_list>span:hover{
+    cursor: text;
+    text-decoration-line: none;
 }

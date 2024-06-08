@@ -2,8 +2,6 @@
     width: 400px;
     padding: 20px;
     margin: 0 auto;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .only_flex_row{
     display: flex;
@@ -36,4 +34,16 @@
 #raceResult, #finalResult {
     margin-top: 10px;
    
+}
+
+.bet_error_block{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+.error_msg{
+    font-size: 13px;
+    color: red;
 }

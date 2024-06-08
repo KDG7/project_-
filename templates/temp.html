@@ -31,12 +31,28 @@
                     <input class="horse_input" type="number" id="betAmount" min="100" max="100000" step="500">
                 </div>
             </div>
+
+            <div class="bet_error_block">
+                <div id="number_error_horse" style="display: none;">
+                    <h5 class="error_msg">말 번호 입력이 올바른지 확인해 주세요</h5>
+                </div>
+                <div id="input_error_horse" style="display: none;">
+                    <h5 class="error_msg">배팅은 100원부터 100,000원까지 가능합니다</h5>
+                </div>
+                <div id="money_error_horse" style="display: none;">
+                    <h5 class="error_msg">잔액이 부족합니다</h5>
+                </div>
+                <div id="no_input_error_horse" style="display: none;">
+                    <h5 class="error_msg">모두 입력하고 시작해주세요</h5>
+                </div>
+            </div>
+            
             <!-- 금액 변동 결과와 현재 금액 -->
             <div id="betResults">
                 <p>전체 지불 : <span id="totalBet">0</span>원</p>
                 <p>획득 금액 : <span id="totalWin">0</span>원</p>
                 <p>손익 : <span id="netProfit">0</span>원</p>
-                <p>남은 자산 : <span id="currentAmount">500,000</span>원</p> <!-- 초기 금액 50만원 설정 -->
+                <p>남은 금액 : <span id="currentAmount">500,000</span>원</p> <!-- 초기 금액 50만원 설정 -->
             </div>
         </div>
     </div>

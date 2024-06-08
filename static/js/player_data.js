@@ -7,8 +7,8 @@ function fetchDataAndDisplayItems() {
             .then(response => response.json())
             .then(data => {
                 const items = data.response.body.items.item;
-                filteredItems = items.filter(item => item.meet === '서울' && parseInt(item.age) <= 50);
-                filteredItems.sort((a, b) => new Date(a.birthday) - new Date(b.birthday)); // Sort by birthday
+                filteredItems = items.filter(item => item.meet === '서울' && parseInt(item.age) <= 40);
+                filteredItems.sort((a, b) => b.ord1CntT - a.ord1CntT);
                 resolve(filteredItems);
             })
             .catch(error => {
@@ -26,8 +26,8 @@ function busanfetchDataAndDisplayItems() {
             .then(response => response.json())
             .then(data => {
                 const items = data.response.body.items.item;
-                filteredItems = items.filter(item => item.meet === '부산경남' && parseInt(item.age) <= 50);
-                filteredItems.sort((a, b) => new Date(a.birthday) - new Date(b.birthday)); // Sort by birthday
+                filteredItems = items.filter(item => item.meet === '부산경남' && parseInt(item.age) <= 40);
+                filteredItems.sort((a, b) => b.ord1CntT - a.ord1CntT);
                 resolve(filteredItems);
             })
             .catch(error => {
@@ -45,8 +45,8 @@ function jejufetchDataAndDisplayItems() {
             .then(response => response.json())
             .then(data => {
                 const items = data.response.body.items.item;
-                filteredItems = items.filter(item => item.meet === '제주' && parseInt(item.age) <= 50);
-                filteredItems.sort((a, b) => new Date(a.birthday) - new Date(b.birthday)); // Sort by birthday
+                filteredItems = items.filter(item => item.meet === '제주' && parseInt(item.age) <= 40);
+                filteredItems.sort((a, b) => b.ord1CntT - a.ord1CntT);
                 resolve(filteredItems);
             })
             .catch(error => {

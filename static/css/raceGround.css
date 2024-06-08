@@ -4,4 +4,62 @@
     margin-top: 27px;
     border-radius: 25px;
     background-color: #f2f4f6;
+    display: flex;
+    flex-direction: row;
+}
+.raceGround_left_box{
+    width: 50%;
+}
+.raceGround_left_box>h4{
+    font-size: 17px;
+    margin-left: 30px;
+    margin-top: 65px;
+}
+.raceGround_left_box>h5{
+    font-size: 15px;
+    margin-left: 40px;
+    font-weight: 500;
+}
+.raceGround_left_table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 20px 30px;
+}
+.raceGround_left_th, .raceGround_left_td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    width: auto;
+}
+.raceGround_left_th {
+    background-color: #f2f2f2;
+}
+
+.raceGround_right_box{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.map_img{
+    width: 380px;
+    height: 200px;
+    border: 0px solid white;
+    border-radius: 25px;
+    margin: 60px 0;
+}
+.raceGround_right_add_box{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+.raceGround_right_add_box>div{
+    margin: 10px 0;
+    font-size: 15px;
+}
+.raceGround_right_add_box>div>span{
+    margin: 10px 0;
+    font-size: 17px;
+    font-weight: 600;
+    width: 70px;
 }

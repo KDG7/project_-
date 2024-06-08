@@ -47,3 +47,8 @@
     font-size: 13px;
     color: red;
 }
+.betResults_text{
+    font-weight: bold;
+    display: inline-block;
+    width: 82px;
+}

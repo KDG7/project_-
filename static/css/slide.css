@@ -20,13 +20,15 @@
   }
   
   .item1{
-  flex-direction: column;
+    flex-direction: column;
   }
-  
   .item2{
     flex-direction: column;
   }
   .item3{
+    flex-direction: column;
+  }
+  .item4{
     flex-direction: column;
   }
 

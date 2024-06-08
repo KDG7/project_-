@@ -27,7 +27,7 @@
                     <input class="horse_input" type="number" id="horseNumber3" min="1" max="7">
                 </div>
                 <div class="only_flex_row">
-                    <label for="betAmount">배팅 금액</label>
+                    <label for="betAmount">게임 금액</label>
                     <input class="horse_input" type="number" id="betAmount" min="100" max="100000" step="500">
                 </div>
             </div>
@@ -49,11 +49,13 @@
             
             <!-- 금액 변동 결과와 현재 금액 -->
             <div id="betResults">
-                <p>전체 지불 : <span id="totalBet">0</span>원</p>
-                <p>획득 금액 : <span id="totalWin">0</span>원</p>
-                <p>손익 : <span id="netProfit">0</span>원</p>
-                <p>남은 금액 : <span id="currentAmount">500,000</span>원</p> <!-- 초기 금액 50만원 설정 -->
+                <p><span class="betResults_text">전체 지불  : </span> <span id="totalBet">0</span>원</p>
+                <p><span class="betResults_text">획득 금액  : </span> <span id="totalWin">0</span>원</p>
+                <p><span class="betResults_text">손익 : </span> <span id="netProfit">0</span>원</p>
+                <p><span class="betResults_text">남은 금액  : </span> <span id="currentAmount">500,000</span>원</p> <!-- 초기 금액 50만원 설정 -->
             </div>
+            
+            <button id="startButton">게임 시작</button>
         </div>
     </div>
 </div>

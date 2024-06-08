@@ -30,6 +30,7 @@ function showContent(content) {
         horseMenuUpCenter.classList.remove('under_line');
         horseMenuUpRight.classList.add('under_line');
         showContent_info("C");
+        showContent_ground("A");
         contentA.style.display = "block";
         contentA1.style.visibility = "visible";
     } else if (content === "B") {
@@ -37,6 +38,7 @@ function showContent(content) {
         horseMenuUpCenter.classList.remove('under_line');
         horseMenuUpRight.classList.add('under_line');
         showContent_info("C");
+        showContent_ground("B");
         contentA.style.display = "block";
         contentB1.style.visibility = "visible";
     } else if (content === "C") {
@@ -44,6 +46,7 @@ function showContent(content) {
         horseMenuUpCenter.classList.remove('under_line');
         horseMenuUpRight.classList.add('under_line');
         showContent_info("C");
+        showContent_ground("C");
         contentA.style.display = "block";
         contentC1.style.visibility = "visible";
     }
@@ -153,5 +156,28 @@ function showContent_info(content) {
         content_rP.style.display = "block";
     } else if (content === "C") {
         content_rG.style.display = "block";
+    }
+}
+
+function showContent_ground(content) {
+    var content_s = document.getElementById("seoul_raceGround_block");
+    var content_b = document.getElementById("busan_raceGround_block");
+    var content_j = document.getElementById("jeju_raceGround_block");
+
+    // 내용 숨김
+    content_s.style.display = "none";
+    content_b.style.display = "none";
+    content_j.style.display = "none";
+    void content_s.offsetWidth;
+    void content_b.offsetWidth;
+    void content_j.offsetWidth;
+    
+    // 선택한 내용 보이기
+    if (content === "A") {
+        content_s.style.display = "block";
+    } else if (content === "B") {
+        content_b.style.display = "block";
+    } else if (content === "C") {
+        content_j.style.display = "block";
     }
 }

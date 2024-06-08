@@ -38,9 +38,9 @@ article{
 }
 
 footer{
-    padding: 50px 30px;
+    padding: 200px 30px;
     height: auto;    
-    background-color: #e8f3ff;
+    background-color: #f4f4f4;
 }
 
 .blank_block{
@@ -208,15 +208,15 @@ footer{
     height: 100%;
     display: flex;
     flex-direction: row;
-    margin-left: 120px;
+    justify-content: center;
 }
 .service_info_compare_left_l_list{
-    width: 45%;
+    width: 33%;
     padding-top: 120px;
     
 }
 .service_info_compare_left_r_list{
-    width: 45%;
+    width: 33%;
     padding-top: 120px;
 }
 .service_info_compare_right_box{
@@ -226,15 +226,18 @@ footer{
     height: 100px;
 }
 .service_info_compare_left_name{
-    font-size: 35px;
+    font-size: 28px;
     font-weight: 600;
     display: inline-block;
-    width: 140px;
+    width: 110px;
 }
 .service_info_compare_left_info{
-    font-size: 20px;
+    font-size: 18px;
 }
 /*================================서비스_race================================*/
+#service_race{
+    margin-bottom: 50px;
+}
 .service_race_block{
     background-color: white;
     height: auto;
@@ -285,6 +288,9 @@ footer{
 
 
 /*================================서비스_intro================================*/
+#service_intro{
+    margin-bottom: 200px;
+}
 /*소개 상단*/
 .intro_box{
     background-color: white;
@@ -293,13 +299,16 @@ footer{
 }
 .intro_title{
     font-size: 45px;
-    padding: 50px 150px 0px;
+    padding: 0px 150px 0px;
     color: black;
     margin-top: 0;
 }
 .intro_title_sub{
-    font-size: 20px;
-    padding: 20px 170px;
+    font-size: 24px;
+    font-weight: 600;
+    padding: 20px 150px;
+    opacity: 60%;
+    margin-bottom: 100px;
 }
 
 /*좌측 선택 창*/
@@ -473,13 +482,33 @@ footer{
 }
 
 /*================================서비스2 목록================================*/
+#go4{
+    margin-bottom: 120px;
+}
 #service_2{
     width: 100%;
 }
 .title_r{
-    margin: 120px 0px 140px 400px;
+    margin: 0px 0px 140px 400px;
     animation: reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
 }
+
+.title_r2{
+    margin: 100px 400px 240px 0px;
+}
+
+.care_service_title2{
+    font-size: 46px;
+    text-align: left;
+}
+.care_service_text2{
+    font-size: 24px;
+    font-weight: 600;
+    text-align: left;
+    color: black;
+    opacity: 60%;
+}
+
 .title_r_h2{
     font-size: 45px;
     margin: 0;
@@ -523,11 +552,15 @@ footer{
     background-color: inherit;
 }
 .care_service_up_center{
-    background-color: #f4f4f4;
+    background-color: inherit;
+    /*background-color: #f4f4f4;
     box-shadow: 1px 1px 1px rgba(0,0,0,0.0), 1px 1px 5px 1px rgba(1,0,1,0.1);
-    border-radius: 25px;
+    border-radius: 25px;*/
     height: 100%;
     width: 23%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .care_service_up_line2{
     height: 100%;
@@ -540,9 +573,11 @@ footer{
     border-radius: 25px;
     height: 100%;
     width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .care_service_center{
-    margin: 20px 0;
     background-color: #f4f4f4;
     box-shadow: 1px 1px 1px rgba(0,0,0,0.0), 1px 1px 5px 1px rgba(1,0,1,0.1);
     border-radius: 25px;
@@ -550,22 +585,17 @@ footer{
     width: 60%;
     text-align: left;
 }
-.care_service_center_title{
-    margin-left: 70px;
-    font-size: 26px;
-    margin-bottom: 40px;
-    margin-top: 40px;
-}
-.care_service_center_text{
-    margin-left: 33px;
-    font-size: 21px;
-    font-weight: 500;
+.left_img_2{
+    width: 45px;
+    height: 90px;
+    animation: text_show2 4s linear 0s infinite alternate;
 }
 .care_service_down{
     display: flex;
     flex-direction: row;
     height: 400px;
     width: 60%;
+    margin: 40px 0;
 }
 .care_service_down_left{
     background-color: #f4f4f4;
@@ -574,16 +604,50 @@ footer{
     height: 100%;
     width: 63%;
 }
+.care_service_down_left_img{
+    height: 100%;
+    width: 100%;
+    border: inherit;
+    border-radius: inherit;
+}
 .care_service_down_line1{
     height: 100%;
     width: 2%;
 }
 .care_service_down_right{
+    background-color: inherit;
+    /*background-color: #f4f4f4;
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.0), 1px 1px 5px 1px rgba(1,0,1,0.1);
+    border-radius: 25px;*/
+    height: 100%;
+    width: 35%;
+}
+
+.care_service_down2{
+    display: flex;
+    flex-direction: row;
+    height: 400px;
+    width: 60%;
+    margin: 20px 0;
+}
+.care_service_down_left2{
+    background-color: inherit;
+    /*background-color: #f4f4f4;
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.0), 1px 1px 5px 1px rgba(1,0,1,0.1);
+    border-radius: 25px;*/
+    height: 100%;
+    width: 35%;
+}
+.care_service_down_line1{
+    height: 100%;
+    width: 2%;
+}
+.care_service_down_right2{
     background-color: #f4f4f4;
     box-shadow: 1px 1px 1px rgba(0,0,0,0.0), 1px 1px 5px 1px rgba(1,0,1,0.1);
     border-radius: 25px;
     height: 100%;
-    width: 35%;
+    width: 63%;
 }
 
 .care_service_ho:hover{

@@ -10,6 +10,12 @@ input::-webkit-search-results-button,
 input::-webkit-search-results-decoration{
     opacity: 0;
 }
+/*input number 타입 화살표 지우기*/
+input[type="number"]::-webkit-outer-spin-button,input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 
 body {
     background-color: white;
@@ -211,12 +217,12 @@ footer{
     justify-content: center;
 }
 .service_info_compare_left_l_list{
-    width: 33%;
+    width: 34%;
     padding-top: 120px;
     
 }
 .service_info_compare_left_r_list{
-    width: 33%;
+    width: 34%;
     padding-top: 120px;
 }
 .service_info_compare_right_box{
@@ -651,16 +657,35 @@ footer{
     height: 100%;
     width: 35%;
 }
-.care_service_down_line1{
-    height: 100%;
-    width: 2%;
-}
 .care_service_down_right2{
     background-color: #f4f4f4;
     box-shadow: 1px 1px 1px rgba(0,0,0,0.0), 1px 1px 5px 1px rgba(1,0,1,0.1);
     border-radius: 25px;
     height: 100%;
     width: 63%;
+}
+
+.care_service_down3{
+    display: flex;
+    flex-direction: row;
+    height: 400px;
+    width: 60%;
+    margin: 20px 0;
+}
+.care_service_down_left3{
+    background-color: inherit;
+    /*background-color: #f4f4f4;
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.0), 1px 1px 5px 1px rgba(1,0,1,0.1);
+    border-radius: 25px;*/
+    height: 100%;
+    width: 15%;
+}
+.care_service_down_right3{
+    background-color: #f4f4f4;
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.0), 1px 1px 5px 1px rgba(1,0,1,0.1);
+    border-radius: 25px;
+    height: 95%;
+    width: 70%;
 }
 
 .care_service_ho:hover{

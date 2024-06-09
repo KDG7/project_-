@@ -31,7 +31,9 @@
   .item4{
     flex-direction: column;
   }
-
+  .item5{
+    flex-direction: column;
+  }
 
   .info_text_text{
   font-size: 33px;

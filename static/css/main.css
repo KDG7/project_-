@@ -545,8 +545,8 @@ footer{
     width: 60%;
 }
 .care_service_up_left{
-    background: #f4f4f4;
-    box-shadow: 1px 1px 1px rgba(0,0,0,0.0), 1px 1px 5px 1px rgba(1,0,1,0.1);
+    /*background: #f4f4f4;
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.0), 1px 1px 5px 1px rgba(1,0,1,0.1);*/
     border-radius: 25px;
     height: 100%;
     width: 23%;
@@ -587,8 +587,8 @@ footer{
     background-color: inherit;
 }
 .care_service_up_right{
-    background-color: #f4f4f4;
-    box-shadow: 1px 1px 1px rgba(0,0,0,0.0), 1px 1px 5px 1px rgba(1,0,1,0.1);
+    /*background-color: #f4f4f4;
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.0), 1px 1px 5px 1px rgba(1,0,1,0.1);*/
     border-radius: 25px;
     height: 100%;
     width: 50%;
@@ -690,5 +690,5 @@ footer{
 
 .care_service_ho:hover{
     transform: scale(1.04); 
-    background-color: #E4E4E4;
+    background-color: #f4f4f4;
 }

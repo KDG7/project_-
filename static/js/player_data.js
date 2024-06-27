@@ -1,59 +1,65 @@
-function fetchDataAndDisplayItems() {
-    return new Promise((resolve, reject) => {
-        const apiUrl = 'https://apis.data.go.kr/B551015/API12_1/jockeyInfo_1?ServiceKey=5mHP3AIBIBjKTzNoLMxDZtyiU308Vbj6xbRjFBb%2BS51zfBxMxIFTcFvNJ26FAESp28%2FgwFAdE9wZhgnQ9jznhA%3D%3D&pageNo=1&numOfRows=818&_type=json';
-        let filteredItems = [];
+let seoulCachedData_p = null;
+let busanCachedData_p = null;
+let jejuCachedData_p = null;
+let filteredItems_p = [];
+const updateInterval_p = 60000; // 60초마다 데이터 갱신
 
-        fetch(apiUrl)
-            .then(response => response.json())
-            .then(data => {
-                const items = data.response.body.items.item;
-                filteredItems = items.filter(item => item.meet === '서울' && parseInt(item.age) <= 40);
-                filteredItems.sort((a, b) => b.ord1CntT - a.ord1CntT);
-                resolve(filteredItems);
-            })
-            .catch(error => {
-                console.error('Error fetching the data:', error);
-                reject(error);
-            });
-    });
+// 데이터를 가져와 캐시에 저장하는 함수 (서울)
+async function fetchDataAndDisplayItems() {
+    const apiUrl = 'https://apis.data.go.kr/B551015/API12_1/jockeyInfo_1?ServiceKey=5mHP3AIBIBjKTzNoLMxDZtyiU308Vbj6xbRjFBb%2BS51zfBxMxIFTcFvNJ26FAESp28%2FgwFAdE9wZhgnQ9jznhA%3D%3D&pageNo=1&numOfRows=818&_type=json';
+    try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+        const items = data.response.body.items.item;
+        filteredItems_p = items.filter(item => item.meet === '서울' && parseInt(item.age) <= 40);
+        filteredItems_p.sort((a, b) => b.ord1CntT - a.ord1CntT);
+        seoulCachedData_p = filteredItems_p; // 캐시에 저장
+        filteredItems_p = [];
+    } catch (error) {
+        console.error('Error fetching the data:', error);
+    }
 }
-function busanfetchDataAndDisplayItems() {
-    return new Promise((resolve, reject) => {
-        const apiUrl = 'https://apis.data.go.kr/B551015/API12_1/jockeyInfo_1?ServiceKey=5mHP3AIBIBjKTzNoLMxDZtyiU308Vbj6xbRjFBb%2BS51zfBxMxIFTcFvNJ26FAESp28%2FgwFAdE9wZhgnQ9jznhA%3D%3D&pageNo=1&numOfRows=818&_type=json';
-        let filteredItems = [];
 
-        fetch(apiUrl)
-            .then(response => response.json())
-            .then(data => {
-                const items = data.response.body.items.item;
-                filteredItems = items.filter(item => item.meet === '부산경남' && parseInt(item.age) <= 40);
-                filteredItems.sort((a, b) => b.ord1CntT - a.ord1CntT);
-                resolve(filteredItems);
-            })
-            .catch(error => {
-                console.error('Error fetching the data:', error);
-                reject(error);
-            });
-    });
+// 데이터를 가져와 캐시에 저장하는 함수 (부산경남)
+async function busanfetchDataAndDisplayItems() {
+    const apiUrl = 'https://apis.data.go.kr/B551015/API12_1/jockeyInfo_1?ServiceKey=5mHP3AIBIBjKTzNoLMxDZtyiU308Vbj6xbRjFBb%2BS51zfBxMxIFTcFvNJ26FAESp28%2FgwFAdE9wZhgnQ9jznhA%3D%3D&pageNo=1&numOfRows=818&_type=json';
+    try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+        const items = data.response.body.items.item;
+        filteredItems_p = items.filter(item => item.meet === '부산경남' && parseInt(item.age) <= 40);
+        filteredItems_p.sort((a, b) => b.ord1CntT - a.ord1CntT);
+        busanCachedData_p = filteredItems_p; // 캐시에 저장
+        filteredItems_p = [];
+    } catch (error) {
+        console.error('Error fetching the data:', error);
+    }
 }
-function jejufetchDataAndDisplayItems() {
-    return new Promise((resolve, reject) => {
-        const apiUrl = 'https://apis.data.go.kr/B551015/API12_1/jockeyInfo_1?ServiceKey=5mHP3AIBIBjKTzNoLMxDZtyiU308Vbj6xbRjFBb%2BS51zfBxMxIFTcFvNJ26FAESp28%2FgwFAdE9wZhgnQ9jznhA%3D%3D&pageNo=1&numOfRows=818&_type=json';
-        let filteredItems = [];
 
-        fetch(apiUrl)
-            .then(response => response.json())
-            .then(data => {
-                const items = data.response.body.items.item;
-                filteredItems = items.filter(item => item.meet === '제주' && parseInt(item.age) <= 40);
-                filteredItems.sort((a, b) => b.ord1CntT - a.ord1CntT);
-                resolve(filteredItems);
-            })
-            .catch(error => {
-                console.error('Error fetching the data:', error);
-                reject(error);
-            });
-    });
+// 데이터를 가져와 캐시에 저장하는 함수 (제주)
+async function jejufetchDataAndDisplayItems() {
+    const apiUrl = 'https://apis.data.go.kr/B551015/API12_1/jockeyInfo_1?ServiceKey=5mHP3AIBIBjKTzNoLMxDZtyiU308Vbj6xbRjFBb%2BS51zfBxMxIFTcFvNJ26FAESp28%2FgwFAdE9wZhgnQ9jznhA%3D%3D&pageNo=1&numOfRows=818&_type=json';
+    try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+        const items = data.response.body.items.item;
+        filteredItems_p = items.filter(item => item.meet === '제주' && parseInt(item.age) <= 40);
+        filteredItems_p.sort((a, b) => b.ord1CntT - a.ord1CntT);
+        jejuCachedData_p = filteredItems_p; // 캐시에 저장
+        filteredItems_p = [];
+    } catch (error) {
+        console.error('Error fetching the data:', error);
+    }
+}
+
+fetchDataAndDisplayItems();
+busanfetchDataAndDisplayItems();
+jejufetchDataAndDisplayItems();
+
+function startDataUpdate_p() {
+    setInterval(fetchDataAndDisplayItems, updateInterval_p);
+    setInterval(busanfetchDataAndDisplayItems, updateInterval_p);
+    setInterval(jejufetchDataAndDisplayItems, updateInterval_p);
 }
 
 let slides_p = [];
@@ -124,35 +130,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     seoulButton.addEventListener('click', () => {
         removeSlideElements();
-        fetchDataAndDisplayItems()
-            .then(filteredItems => {
-                setupButtons(filteredItems);
-            })
-            .catch(error => {
-                console.error('Error fetching and displaying items:', error);
-            });
+        setupButtons(seoulCachedData_p);
+        
     });
 
     busanButton.addEventListener('click', () => {
         removeSlideElements();
-        busanfetchDataAndDisplayItems()
-            .then(filteredItems => {
-                setupButtons(filteredItems);
-            })
-            .catch(error => {
-                console.error('Error fetching and displaying items:', error);
-            });
+        setupButtons(busanCachedData_p);
+        
     });
 
     jejuButton.addEventListener('click', () => {
         removeSlideElements();
-        jejufetchDataAndDisplayItems()
-            .then(filteredItems => {
-                setupButtons(filteredItems);
-            })
-            .catch(error => {
-                console.error('Error fetching and displaying items:', error);
-            });
+        setupButtons(jejuCachedData_p);
+        
     });
 
     function removeSlideElements() {
@@ -198,3 +189,5 @@ function displayItems(filteredItems) {
         playerInfoDiv.innerHTML = '<p>해당 지역의 기수 정보가 없습니다.</p>';
     }
 }
+
+window.onload = startDataUpdate_p;

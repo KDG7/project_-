@@ -8,15 +8,13 @@
     z-index: 1;
 }
 .race_game_over{
-    position: relative;
+    position: absolute;
     z-index: 1;
     width: 840px;
-    height: 451px;
+    height: 450px;
     border: none;
     background-color: #F2f4f6;
     opacity: 80%;
-    top: -471px;
-    left: 0.3px;
     display: none;
 }
 .race_game_over_text_box{
@@ -43,12 +41,13 @@
 .game-container {
     text-align: center;
 }
-
-.track {
+.track-container{
     position: relative;
+}
+.track {
+    position: absolute;
     width: 840px;
     height: 450px;
-    margin-bottom: 20px;
     overflow-x: hidden;
 }
 .track::before{

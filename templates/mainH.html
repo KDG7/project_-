@@ -26,7 +26,7 @@
                 <img class="main_img"src="{{ url_for('static', path='img/main_img.png') }}" alt="main">
             </div>
             <div class="title_q">
-                <div><h2>한국 경마 알아보기!</h2></div>
+                <div><h2>한국 경마 체험하기!</h2></div>
                 <h5></h5>
             </div>
             <div class="bla_box">
@@ -118,8 +118,8 @@
                 <h2 class="intro_title_sub">당신을 위해 상위 10위의 정보를 모아놨어요!</h2>
                 <div class="intro_list_block">
                     <div class="intro_text_list motion_l">
-                        <div id="seoul" class="intro_text_box_box">
-                            <div class="intro_text_box text_box_seoul" onclick="showContent('A')">
+                        <div class="intro_text_box_box">
+                            <div id="seoul" class="intro_text_box text_box_seoul" onclick="showContent('A')">
                                 <img class="text_box_img" src="{{ url_for('static', path='img/seoulLogo.png') }}" alt="seoul">
                                 <span class="intro_text">서울</span>
                             </div>
@@ -127,8 +127,8 @@
                                 <img class="intro_select_img" src="{{ url_for('static', path='img/carrot.png') }}" alt="carrot">
                             </span>
                         </div>
-                        <div id="busan" class="intro_text_box_box">
-                            <div class="intro_text_box text_box_busan" onclick="showContent('B')">
+                        <div class="intro_text_box_box">
+                            <div id="busan" class="intro_text_box text_box_busan" onclick="showContent('B')">
                                 <img class="text_box_img" src="{{ url_for('static', path='img/busanLogo.png') }}" alt="busan">    
                                 <span class="intro_text">부산경남</span>
                             </div>
@@ -136,8 +136,8 @@
                                 <img class="intro_select_img"src="{{ url_for('static', path='img/carrot.png') }}" alt="carrot">
                             </span>
                         </div>
-                        <div id="jeju" class="intro_text_box_box">
-                            <div class="intro_text_box text_box_jeju" onclick="showContent('C')">
+                        <div class="intro_text_box_box">
+                            <div id="jeju" class="intro_text_box text_box_jeju" onclick="showContent('C')">
                                 <img class="text_box_img" src="{{ url_for('static', path='img/jejuLogo.png') }}" alt="jeju">
                                 <span class="intro_text">제주</span>
                             </div>
@@ -176,14 +176,27 @@
             
             <div class="care_service_block">
                 <div class="title_r">
-                    <h2 class="title_r_h2">도박 중독에 주의하세요</h2>
+                    <h2 class="title_r_h2">경마를 더 알아볼까요</h2>
                 </div>
 
-                <div class="title_r2 motion_u">
-                    <h2 class="care_service_title2">중독이란?</h2>
-                    <h2 class="care_service_text2">단순한 습관과는 달리, 점차 행동의 양과 횟수가 많아지는 집착.</h2> 
-                    <h2 class="care_service_text2">하지 않으면 신체적, 심리적 불편함이 발생하는 금단 등이 나타나는 의존의 상태를 의미해요.</h2>   
+                <div class="care_service_up">
+                    <div class="care_service_up_left care_service_ho motion_l">
+                        <a href="https://race.kra.co.kr/seoulMain.do"><img src="https://www.kra.co.kr/common/images/common/logo.svg" alt="한국마사회"></a>
+                    </div>
+                    <div class="care_service_up_line1"></div>
+                    <div class="care_service_up_center motion_u">
+                        <img class="left_img_2"src="{{ url_for('static', path='img/left.png') }}" alt="left">
+                        <img class="left_img_2"src="{{ url_for('static', path='img/left.png') }}" alt="left">
+                        <img class="left_img_2"src="{{ url_for('static', path='img/left.png') }}" alt="left">
+                    </div>
+                    <div class="care_service_up_line2"></div>
+                    <div class="care_service_up_right motion_r">
+                        <h3>경마의 모든 정보! 한국마사회와 함께해요</h3>
+                    </div>
                 </div>
+
+
+                
                 <div class="care_service_up">
                     <div class="care_service_up_left care_service_ho motion_l">
                         <a href="https://www.kcgp.or.kr/pcMain.do"><img src="https://www.kcgp.or.kr/resources/common/images/main_2020/logo.png" alt="한국예방"></a>
@@ -199,7 +212,7 @@
                         <h3>중독 예방! 한국도박문제예방치유원과 함께해요</h3>
                     </div>
                 </div>
-                <div class="care_service_down">
+                <!--<div class="care_service_down">
                     <div class="care_service_down_left motion_u">
                         <img class="care_service_down_left_img"src="{{ url_for('static', path='img/laptop.jpg') }}" alt="laptop">
                     </div>
@@ -221,7 +234,7 @@
                     <div class="care_service_down_right3 motion_u">
                         <img class="care_service_down_left_img"src="{{ url_for('static', path='img/group.jpg') }}" alt="group">
                     </div>
-                </div>
+                </div>-->
             </div>
         </div>
     </article>

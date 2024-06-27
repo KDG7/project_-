@@ -15,7 +15,7 @@ app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 #uvicorn main:app --reload --port 8000 로 열기
-@app.get("/")
+@app.get("/marlearn")
 async def goMain(request: Request):
     return templates.TemplateResponse("mainH.html", {"request": request})
 

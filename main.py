@@ -5,7 +5,6 @@ from fastapi.responses import HTMLResponse
 from pydantic import BaseModel
 from typing import Optional
 import random
-import data
 
 from fastapi.staticfiles import StaticFiles
 templates = Jinja2Templates(directory="templates")

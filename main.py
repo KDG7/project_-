@@ -19,7 +19,6 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 async def goMain(request: Request):
     return templates.TemplateResponse("mainH.html", {"request": request})
 
-
 class BetRequest(BaseModel):
     betType: int
     horseNumber1: int

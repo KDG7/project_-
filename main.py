@@ -1,3 +1,4 @@
+import os
 from fastapi import FastAPI
 from fastapi.templating import Jinja2Templates
 from fastapi import Request
@@ -19,17 +20,12 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 async def goMain(request: Request):
     return templates.TemplateResponse("mainH.html", {"request": request})
 
-@app.get("/support/")
-async def goSupport(request: Request):
-    return templates.TemplateResponse("support.html", {"request": request})
-
-@app.get("/Info/", response_class=HTMLResponse)
-async def read_root(request: Request):
-    try:
-        all_data = data.fetch_all_data()
-    except Exception as e:
-        return HTMLResponse(content=f"An error occurred: {e}", status_code=500)
-    return templates.TemplateResponse("Info.html", {"request": request, "data": all_data})
+@app.get("/config")
+def read_config():
+    api_key = os.getenv("fast-api", "fast-api-value")
+    return {
+        "API_KEY": api_key
+    }
 
 class BetRequest(BaseModel):
     betType: int
